@@ -1,11 +1,16 @@
 package product;
 
+import product.console.ConsoleProduct;
+
+import java.util.ArrayList;
+
 public abstract class ProductAbstractClass {
     private Integer id;
     private String productType;
     private double price;
     private String serie;
     private String brand;
+    private double tax;
 
     public Integer getId() {
         return id;
@@ -36,5 +41,11 @@ public abstract class ProductAbstractClass {
     }
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+    public double getTax() {
+        return tax;
+    }
+    public void setTax(double tax) {
+        this.tax = tax;
     }
 }
