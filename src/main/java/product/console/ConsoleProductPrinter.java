@@ -1,17 +1,24 @@
 package product.console;
 
-public class ConsoleProductPrinter implements IDisplayProductInfo{
+public class ConsoleProductPrinter implements IDisplayConsoleProductInfo {
     @Override
-    public void displayProductInfo(ConsoleProductArchiever productArchiever) {
-        for(int i=0; i<productArchiever.consoleProductList.size(); i++) {
-            System.out.println(productArchiever.consoleProductList.get(i).getId());
-            System.out.println(productArchiever.consoleProductList.get(i).getProductType());
-            System.out.println(productArchiever.consoleProductList.get(i).getPrice());
-            System.out.println(productArchiever.consoleProductList.get(i).getSerie());
-            System.out.println(productArchiever.consoleProductList.get(i).getBrand());
-            System.out.println(productArchiever.consoleProductList.get(i).getTax());
-            System.out.println(productArchiever.consoleProductList.get(i).getDiskCapacity());
-            System.out.println(productArchiever.consoleProductList.get(i).getDiskReader());
+    public void displayProductInfo(ConsoleProductArchiver productArchiver) {
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        for(int i=0; i<productArchiver.consoleProductList.size(); i++) {
+            System.out.println("#: "+productArchiver.consoleProductList.get(i).getId()
+                    +"      Type: "+productArchiver.consoleProductList.get(i).getProductType()
+                    +"      Price: $"+productArchiver.consoleProductList.get(i).getPrice()
+                    +"      Serie: "+productArchiver.consoleProductList.get(i).getSerie()
+                    +"      Brand: "+productArchiver.consoleProductList.get(i).getBrand()
+                    +"      Tax: $"+productArchiver.consoleProductList.get(i).getTax()
+                    +"      Disk Capacity: "+productArchiver.consoleProductList.get(i).getDiskCapacity()+"GB"
+                    +"      Disk Reader: "+productArchiver.consoleProductList.get(i).getDiskReader()
+            );
+            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
+    }
+    @Override
+    public void displayMessage(String msg) {
+        System.out.println(msg);
     }
 }

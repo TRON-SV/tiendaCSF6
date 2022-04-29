@@ -1,4 +1,4 @@
-package product.console;
+package product;
 
 public interface IPlayVideoGame {
     public void playVideoGame();

@@ -1,6 +1,6 @@
 package product;
-import product.console.ConsoleProductArchiever;
+import product.console.ConsoleProductArchiver;
 
 public interface IProductArchiever {
-    public abstract void displayProductInfo(ConsoleProductArchiever productArchiever);
+    public abstract void displayProductInfo(ConsoleProductArchiver productArchiever);
 }
