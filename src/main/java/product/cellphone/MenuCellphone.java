@@ -8,6 +8,9 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 
 public class MenuCellphone {
+    public MenuCellphone() {
+    }
+
     public static void printMenu(String[] options){
         for (String option : options){
             System.out.println(option);
@@ -15,7 +18,7 @@ public class MenuCellphone {
         System.out.print("Choose your option : ");
     }
 
-    public static void main(String[] args) {
+    public static void crudCellphone() {
         String[] options = {
                 "/*---------------------------------------------------*/",
                 "1- Display Products",
@@ -81,6 +84,7 @@ public class MenuCellphone {
                         cellphoneProduct = captureCellphoneProductData();
                         cellphoneProductArchiver.modifyCellphoneProduct(cellphoneProduct,productId);
                         break;
+
                     case 0: exit(0);
                 }
 
@@ -204,5 +208,10 @@ public class MenuCellphone {
         sc = new Scanner(System.in);
 
         return product;
+    }
+
+    public static void main(String[] args) {
+        MenuCellphone menu = new MenuCellphone();
+        menu.crudCellphone();
     }
 }
