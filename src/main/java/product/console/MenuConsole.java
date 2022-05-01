@@ -1,7 +1,17 @@
 package product.console;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class MenuConsole {
     public static void printMenu(String[] options){
@@ -17,6 +27,7 @@ public class MenuConsole {
                 "2- Add Product",
                 "3- Delete a Product",
                 "4- Modify Product Data",
+                "5- Generate JSON from Object",
                 "0- Exit",
                 "/*---------------------------------------------------*/",
         };
@@ -26,7 +37,7 @@ public class MenuConsole {
         ConsoleProductArchiver consoleProductArchiver = new ConsoleProductArchiver();
         ConsoleProductPrinter consoleProductPrinter = new ConsoleProductPrinter();
         //FILLING A FIXED SET OF PRODUCTS
-        consoleProductFiller.fillProducts(50, consoleProductArchiver);
+        consoleProductFiller.fillProducts(10, consoleProductArchiver);
         Integer productId;
 
         Scanner scanner = new Scanner(System.in);
@@ -76,6 +87,29 @@ public class MenuConsole {
                         productId = sc.nextInt();
                         consoleProduct = captureConsoleProductData();
                         consoleProductArchiver.modifyConsoleProduct(consoleProduct,productId);
+                        break;
+                    case 5://GENERATE JSON FILE FROM OBJECT
+                        try {
+                            ObjectMapper objectMapper = new ObjectMapper();
+                            //Set pretty printing of json
+                            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+                            //Define map which will be converted to JSON
+                            //ArrayList<ConsoleProduct> consoleProductList = consoleProductArchiver.getConsoleProductList();
+                            //Convert List of ConsoleProduct objects to JSON
+                            String arrayToJson = objectMapper.writeValueAsString(consoleProductArchiver.getConsoleProductList());
+                            consoleProductPrinter.displayMessage(arrayToJson);
+                            objectMapper.writeValue(new File("src/main/resources/productList.json"), consoleProductArchiver.getConsoleProductList());
+                            consoleProductPrinter.displayMessage("PRODUCTS EXPORTED TO -> src/main/resources/productList.json");
+                            //EMPTY THE ConsoleProductList
+                            consoleProductArchiver.setConsoleProductList(null);
+                            //2. Convert JSON to List of ConsoleProduct objects
+                            //Define Custom Type reference for List<ConsoleProduct> type
+                            TypeReference<ArrayList<ConsoleProduct>> mapType = new TypeReference<ArrayList<ConsoleProduct>>() {};
+                            consoleProductArchiver.setConsoleProductList(objectMapper.readValue(arrayToJson, mapType));
+                            consoleProductPrinter.displayMessage("Converted JSON to List of ConsoleProduct objects :");
+                        }catch (Exception e){
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case 0:
                         break;
