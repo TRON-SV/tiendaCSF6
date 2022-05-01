@@ -1,26 +1,18 @@
-package product.cellphone;
-
-import product.console.ConsoleProduct;
+package product.console;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static java.lang.System.exit;
-
-public class MenuCellphone {
-    public MenuCellphone() {
-    }
-
+public class MenuConsole {
     public static void printMenu(String[] options){
         for (String option : options){
             System.out.println(option);
         }
         System.out.print("Choose your option : ");
     }
-
-    public static void crudCellphone() {
+    public static void crudConsole() {
         String[] options = {
-                "/*------------------------MANAGE CELLPHONES---------------------------*/",
+                "/*------------------------MANAGE CONSOLES---------------------------*/",
                 "1- Display Products",
                 "2- Add Product",
                 "3- Delete a Product",
@@ -28,37 +20,38 @@ public class MenuCellphone {
                 "0- Exit",
                 "/*---------------------------------------------------*/",
         };
-        CellphoneProduct cellphoneProduct = new CellphoneProduct();
-        CellphoneProductFiller cellphoneProductFiller = new CellphoneProductFiller();
-        CellphoneProductArchiver cellphoneProductArchiver = new CellphoneProductArchiver();
-        CellphoneProductPrinter cellphoneProductPrinter = new CellphoneProductPrinter();
-
-        cellphoneProductFiller.fillProducts(20, cellphoneProductArchiver);
+        //DECLARING PRODUCT RELATED CLASSES FOR FURTHER USE
+        ConsoleProduct consoleProduct = new ConsoleProduct();
+        ConsoleProductFiller consoleProductFiller = new ConsoleProductFiller();
+        ConsoleProductArchiver consoleProductArchiver = new ConsoleProductArchiver();
+        ConsoleProductPrinter consoleProductPrinter = new ConsoleProductPrinter();
+        //FILLING A FIXED SET OF PRODUCTS
+        consoleProductFiller.fillProducts(50, consoleProductArchiver);
         Integer productId;
 
         Scanner scanner = new Scanner(System.in);
         Scanner sc;
-
         int option = 1;
         while (option!=0){
             printMenu(options);
-            try{
+            try {
                 option = scanner.nextInt();
                 switch (option){
                     case 1://DISPLAY PRODUCTS
-                        cellphoneProductPrinter.displayProductInfo(cellphoneProductArchiver);
+                        consoleProductPrinter.displayProductInfo(consoleProductArchiver);
                         break;
                     case 2://ADD A PRODUCT
-                        cellphoneProduct = captureCellphoneProductData();
+                        consoleProduct = captureConsoleProductData();
                         /*------------------ADDING THE PRODUCT TO THE LIST--------------------*/
-                        cellphoneProductFiller.fillProduct(cellphoneProduct, cellphoneProductArchiver);
-                        cellphoneProductArchiver.addCellphoneProduct(cellphoneProduct);
+                        consoleProductFiller.fillProduct(consoleProduct, consoleProductArchiver);
+                        consoleProductArchiver.addConsoleProduct(consoleProduct);
                         //IMPLEMENTING METHODS RELATED TO CLASS ConsoleProduct (SINGLE RESPONSIBILITY AND INTERFACE SEGREGATION)
-                        cellphoneProduct.turnOnDevice();
-                        cellphoneProduct.turnOffDevice();
+                        consoleProduct.turnOnDevice();
+                        consoleProduct.playVideoGame();
+                        consoleProduct.turnOffDevice();
                         break;
                     case 3://DELETE A PRODUCT
-                        cellphoneProductPrinter.displayProductInfo(cellphoneProductArchiver);
+                        consoleProductPrinter.displayProductInfo(consoleProductArchiver);
                         sc = new Scanner(System.in);
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
@@ -68,10 +61,10 @@ public class MenuCellphone {
                             sc.next();
                         }
                         productId = sc.nextInt();
-                        cellphoneProductArchiver.deleteCellphoneProduct(productId);
+                        consoleProductArchiver.deleteConsoleProduct(productId);
                         break;
                     case 4://UPDATE A PRODUCT
-                        cellphoneProductPrinter.displayProductInfo(cellphoneProductArchiver);
+                        consoleProductPrinter.displayProductInfo(consoleProductArchiver);
                         sc = new Scanner(System.in);
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
@@ -81,13 +74,12 @@ public class MenuCellphone {
                             sc.next();
                         }
                         productId = sc.nextInt();
-                        cellphoneProduct = captureCellphoneProductData();
-                        cellphoneProductArchiver.modifyCellphoneProduct(cellphoneProduct,productId);
+                        consoleProduct = captureConsoleProductData();
+                        consoleProductArchiver.modifyConsoleProduct(consoleProduct,productId);
                         break;
-
-                    case 0: break;
+                    case 0:
+                        break;
                 }
-
             }
             catch (InputMismatchException ex){
                 System.out.println("Please enter an integer value between 1 and " + options.length);
@@ -98,18 +90,15 @@ public class MenuCellphone {
                 scanner.next();
             }
         }
-
     }
 
-    public static CellphoneProduct captureCellphoneProductData() {
+    public static ConsoleProduct captureConsoleProductData() {
         //DECLARING ALL PRODUCT RELATED VARIABLES
-        String productType; double price; String serie; String brand; String screenSize;
-        String processor; String operatingSystem; Integer memoryRAM; Integer hardDrive;
-        Integer camera;
-        CellphoneProduct product = new CellphoneProduct();
+        String productType;double price;String serie;String brand;double tax;Integer diskCapacity;boolean diskReader;
+        ConsoleProduct product = new ConsoleProduct();
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the productType(Cellphone: ");
+        System.out.println("Enter the productType(Console/TV/PC): ");
         while (!sc.hasNext("[A-Za-z]*")) {
             System.out.println("That's not a String!");
             sc.next();
@@ -154,64 +143,26 @@ public class MenuCellphone {
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();
-        System.out.println("Enter Screen Size (String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setScreenSize(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Processor (String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setProcessor(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter Operating System (String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setOperatingSystem(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Memory-RAM(Integer): ");
+        System.out.println("Enter the Disk-Capacity(Integer): ");
         while (!sc.hasNextInt()) {
             System.out.println("That's not a valid value (Integer)!");
             sc.next();
         }
-        product.setMemoryRAM(sc.nextInt());
+        product.setDiskCapacity(sc.nextInt());
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();
-        System.out.println("Enter Hard-Drive capacity(Integer): ");
-        while (!sc.hasNextInt()) {
+        System.out.println("Does the product has DiskReader? (true/false): ");
+        while (!sc.hasNextBoolean()) {
             System.out.println("That's not a valid value (Integer)!");
             sc.next();
         }
-        product.setHardDrive(sc.nextInt());
+        product.setDiskReader(sc.nextBoolean());
         sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter Camera Quality (Integer): ");
-        while (!sc.hasNextInt()) {
-            System.out.println("That's not a valid value (Integer)!");
-            sc.next();
-        }
-        product.setCamera(sc.nextInt());
-        sc = new Scanner(System.in);
-
         return product;
     }
-
     public static void main(String[] args) {
-        MenuCellphone menu = new MenuCellphone();
-        menu.crudCellphone();
+        MenuConsole menu = new MenuConsole();
+        menu.crudConsole();
     }
 }

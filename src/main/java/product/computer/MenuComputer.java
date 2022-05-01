@@ -15,7 +15,7 @@ public class MenuComputer {
 
     public static void crudComputer() {
         String[] options = {
-                "/*---------------------------------------------------*/",
+                "/*------------------------MANAGE COMPUTERS---------------------------*/",
                 "1- Display Products",
                 "2- Add Product",
                 "3- Delete a Product",
@@ -73,7 +73,6 @@ public class MenuComputer {
                         computerProductArchiver.modifyComputerProduct(computerProduct, productId);
                         break;
                     case 0:
-                        exit(0);
                         break;
                 }
             }

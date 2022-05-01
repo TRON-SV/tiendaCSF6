@@ -1,6 +1,9 @@
 package User;
 
 import product.cellphone.MenuCellphone;
+import product.computer.MenuComputer;
+import product.console.MenuConsole;
+import product.tv.MenuTv;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -40,17 +43,19 @@ public class MenuAdmin {
                         menuCellphone.crudCellphone();
                         break;
                     case 2://CONSOLE PRODUCTS
-                        System.out.println("2");
+                        MenuConsole menuConsole = new MenuConsole();
+                        menuConsole.crudConsole();
                         break;
                     case 3://TELEVISION PRODUCTS
-                        System.out.println("3");
-
-                    case 4://COMPUTER PRODUCTS
-                        System.out.println("4");
+                        MenuTv menuTv = new MenuTv();
+                        menuTv.crudTv();
                         break;
-
+                    case 4://COMPUTER PRODUCTS
+                        MenuComputer menuComputer = new MenuComputer();
+                        menuComputer.crudComputer();
+                        break;
                     case 0:
-                        exit(0);
+                        break;
                 }
             }catch (InputMismatchException ex){
                 System.out.println("Please enter an integer value between 1 and " + options.length);
