@@ -13,6 +13,7 @@ public class ConsoleProductPrinter implements IDisplayConsoleProductInfo {
                     +"      Tax: $"+productArchiver.consoleProductList.get(i).getTax()
                     +"      Disk Capacity: "+productArchiver.consoleProductList.get(i).getDiskCapacity()+"GB"
                     +"      Disk Reader: "+productArchiver.consoleProductList.get(i).getDiskReader()
+
             );
             System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
