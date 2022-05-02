@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Admin extends User implements ILogInUser {
     public Admin() {
-        this.idUser = "grupo3cfs";
+        this.idUser = "AGroup3cfs";
         this.userType = 1;
         this.name = "Grupo 3";
         this.password = "12345";

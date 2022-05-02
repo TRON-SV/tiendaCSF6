@@ -2,7 +2,7 @@ package product.tv;
 
 import java.util.ArrayList;
 
-public class TvProductArchiver implements ITvProductArchiver {
+public class TvProductArchiver implements ITvProductArchiver, ITvProductModifier {
     //VARIABLES DEFINITION
     TvProduct tvProduct = new TvProduct();
     TvProductPrinter productPrinter = new TvProductPrinter();

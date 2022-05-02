@@ -2,7 +2,7 @@ package product.console;
 
 import java.util.ArrayList;
 
-public class ConsoleProductArchiver implements IConsoleProductArchiver{
+public class ConsoleProductArchiver implements IConsoleProductArchiver, IConsoleProductModifier{
     //VARIABLES DEFINITION
     ConsoleProduct consoleProduct = new ConsoleProduct();
     ConsoleProductPrinter productPrinter = new ConsoleProductPrinter();

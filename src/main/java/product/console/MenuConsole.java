@@ -13,6 +13,15 @@ import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+
 public class MenuConsole {
     public static void printMenu(String[] options){
         for (String option : options){
@@ -28,6 +37,7 @@ public class MenuConsole {
                 "3- Delete a Product",
                 "4- Modify Product Data",
                 "5- Generate JSON from Object",
+                "6- Send a Email to jerson.psn@hotmail.com",
                 "0- Exit",
                 "/*---------------------------------------------------*/",
         };
@@ -110,6 +120,32 @@ public class MenuConsole {
                         }catch (Exception e){
                             System.out.println(e.getMessage());
                         }
+                        break;
+                    case 6://SENDING EMAIL TO jerson.psn@hotmail.com
+                        /*Session session = Session.getInstance(prop, new Authenticator() {
+
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(username, password);
+                            }
+                        });
+
+                        Message message = new MimeMessage(session);
+                        message.setFrom(new InternetAddress("from@gmail.com"));
+                        message.setRecipients(
+                                Message.RecipientType.TO, InternetAddress.parse("jerson.psn@hotmail.com"));
+                        message.setSubject("Mail Subject");
+
+                        String msg = "This is my first email using JavaMailer";
+
+                        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+                        mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
+
+                        Multipart multipart = new MimeMultipart();
+                        multipart.addBodyPart(mimeBodyPart);
+
+                        message.setContent(multipart);
+
+                        Transport.send(message);*/
                         break;
                     case 0:
                         break;

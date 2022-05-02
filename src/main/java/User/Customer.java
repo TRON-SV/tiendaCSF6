@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Customer extends User implements ILogInUser{
     public Customer() {
-        this.idUser = "102030";
+        this.idUser = "CGroup3cfs";
         this.userType = 2;
         this.name = "Alan Brito";
         this.password = "12345";

@@ -1,10 +1,11 @@
 package product.computer;
 
 import product.computer.interfaces.IComputerProductArchiver;
+import product.computer.interfaces.IComputerProductModifier;
 
 import java.util.ArrayList;
 
-public class ComputerProductArchiver implements IComputerProductArchiver {
+public class ComputerProductArchiver implements IComputerProductArchiver, IComputerProductModifier {
     ComputerProduct computerProduct = new ComputerProduct();
     ComputerProductPrinter productPrinter = new ComputerProductPrinter();
     public ArrayList<ComputerProduct> computerProductList = new ArrayList<>();

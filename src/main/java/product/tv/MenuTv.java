@@ -34,7 +34,7 @@ public class MenuTv {
         TvProduct tvProduct = new TvProduct();
         TvProductFiller tvProductFiller = new TvProductFiller();
         TvProductArchiver tvProductArchiver = new TvProductArchiver();
-       TvProductPrinter tvProductPrinter = new TvProductPrinter();
+        TvProductPrinter tvProductPrinter = new TvProductPrinter();
 
         tvProductFiller.fillProducts(20, tvProductArchiver);
         Integer productId;

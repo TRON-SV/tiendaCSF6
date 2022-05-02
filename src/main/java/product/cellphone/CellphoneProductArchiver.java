@@ -1,8 +1,10 @@
 package product.cellphone;
 
+import product.console.IConsoleProductModifier;
+
 import java.util.ArrayList;
 
-public class CellphoneProductArchiver implements ICellphoneProductArchiver{
+public class CellphoneProductArchiver implements ICellphoneProductArchiver, ICellphoneProductModifier {
 
     CellphoneProduct cellphoneProduct = new CellphoneProduct();
     CellphoneProductPrinter productPrinter = new CellphoneProductPrinter();
