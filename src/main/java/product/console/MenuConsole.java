@@ -100,7 +100,7 @@ public class MenuConsole {
                         break;
                     case 5://GENERATE JSON FILE FROM OBJECT
                         try {
-                            /*ObjectMapper objectMapper = new ObjectMapper();
+                            ObjectMapper objectMapper = new ObjectMapper();
                             //Set pretty printing of json
                             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
                             //Define map which will be converted to JSON
@@ -116,7 +116,7 @@ public class MenuConsole {
                             //Define Custom Type reference for List<ConsoleProduct> type
                             TypeReference<ArrayList<ConsoleProduct>> mapType = new TypeReference<ArrayList<ConsoleProduct>>() {};
                             consoleProductArchiver.setConsoleProductList(objectMapper.readValue(arrayToJson, mapType));
-                            consoleProductPrinter.displayMessage("Converted JSON to List of ConsoleProduct objects :");*/
+                            consoleProductPrinter.displayMessage("Converted JSON to List of ConsoleProduct objects :");
                         }catch (Exception e){
                             System.out.println(e.getMessage());
                         }
