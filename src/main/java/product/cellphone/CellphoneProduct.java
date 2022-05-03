@@ -1,10 +1,13 @@
 package product.cellphone;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import product.IDeviceSwitcher;
 import product.ProductAbstractClass;
-
+@AllArgsConstructor
+@Data
 public class CellphoneProduct extends ProductAbstractClass implements IDeviceSwitcher {
-
     private String screenSize;
     private String processor;
     private String operatingSystem;
@@ -12,56 +15,9 @@ public class CellphoneProduct extends ProductAbstractClass implements IDeviceSwi
     private Integer hardDrive;
     private Integer camera;
 
+    @Builder
     public CellphoneProduct() {
         super();
-    }
-
-    public String getScreenSize() {
-        return screenSize;
-    }
-
-    public void setScreenSize(String screenSize) {
-        this.screenSize = screenSize;
-    }
-
-    public String getProcessor() {
-        return processor;
-    }
-
-    public void setProcessor(String processor) {
-        this.processor = processor;
-    }
-
-    public String getOperatingSystem() {
-        return operatingSystem;
-    }
-
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
-
-    public int getMemoryRAM() {
-        return memoryRAM;
-    }
-
-    public void setMemoryRAM(int memoryRAM) {
-        this.memoryRAM = memoryRAM;
-    }
-
-    public int getHardDrive() {
-        return hardDrive;
-    }
-
-    public void setHardDrive(int hardDrive) {
-        this.hardDrive = hardDrive;
-    }
-
-    public int getCamera() {
-        return camera;
-    }
-
-    public void setCamera(int camera) {
-        this.camera = camera;
     }
 
     @Override

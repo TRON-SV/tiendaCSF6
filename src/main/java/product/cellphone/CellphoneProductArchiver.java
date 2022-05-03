@@ -1,23 +1,18 @@
 package product.cellphone;
 
-import product.console.IConsoleProductModifier;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class CellphoneProductArchiver implements ICellphoneProductArchiver, ICellphoneProductModifier {
 
     CellphoneProduct cellphoneProduct = new CellphoneProduct();
     CellphoneProductPrinter productPrinter = new CellphoneProductPrinter();
     public ArrayList<CellphoneProduct> cellphoneProductList = new ArrayList<CellphoneProduct>();
-
-
-    public ArrayList<CellphoneProduct> getCellphoneProductList() {
-        return cellphoneProductList;
-    }
-
-    public void setCellphoneProductList(ArrayList<CellphoneProduct> cellphoneProductList) {
-        this.cellphoneProductList = cellphoneProductList;
-    }
 
     @Override
     public void addCellphoneProduct(CellphoneProduct product) {

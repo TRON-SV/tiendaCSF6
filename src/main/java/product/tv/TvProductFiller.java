@@ -1,7 +1,12 @@
 package product.tv;
 
-public class TvProductFiller implements IFillSingleTvProduct, IFillSeveralTvProduct {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor @NoArgsConstructor
+@Data
+public class TvProductFiller implements IFillSingleTvProduct, IFillSeveralTvProduct {
     @Override
     public void fillProduct(TvProduct product, TvProductArchiver productArchiver) {
         productArchiver.tvProduct = product;

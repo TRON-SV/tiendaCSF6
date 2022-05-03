@@ -1,5 +1,11 @@
 package product.tv;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class TvProductPrinter implements IDisplayTvProductInfo {
     @Override
     public void displayProductInfo(TvProductArchiver productArchiver) {

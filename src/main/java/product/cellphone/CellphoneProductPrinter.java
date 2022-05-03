@@ -1,5 +1,11 @@
 package product.cellphone;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class CellphoneProductPrinter implements IDisplayCellphoneProductInfo{
     @Override
     public void displayMessage(String msg) {

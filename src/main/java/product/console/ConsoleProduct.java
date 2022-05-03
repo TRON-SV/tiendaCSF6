@@ -6,7 +6,8 @@ import product.IPlayVideoGame;
 import product.ProductAbstractClass;
 //Open for Extension, Closed for Modification BY EXTENDING the ProductAbstractClass
 @AllArgsConstructor
-public @Data @EqualsAndHashCode(callSuper = false) class ConsoleProduct extends ProductAbstractClass implements IPlayVideoGame, IDeviceSwitcher {
+@Data
+public @EqualsAndHashCode(callSuper = false) class ConsoleProduct extends ProductAbstractClass implements IPlayVideoGame, IDeviceSwitcher {
     private Integer diskCapacity;
     private Boolean diskReader;
     @Builder

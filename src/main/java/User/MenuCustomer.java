@@ -28,8 +28,8 @@ public class MenuCustomer {
                 "/*---------------------------------------------------*/",
         };
         //CREATING CUSTOMER USER AND SHOPPING CART DATA
-        Customer customer = new Customer();
-        customer.logInUser();
+        Customer customer = new Customer("CGroup3CSF",2,"Customer 1","12345","any@hotmail.com");
+        //customer.logInUser();
         //---------------------------VARIABLES USED FOR CELLPHONES------------------------------
         ArrayList<CellphoneProduct> cellphoneProductList = new ArrayList<CellphoneProduct>();
         CellphoneProduct cellphoneProduct = new CellphoneProduct();
@@ -65,7 +65,6 @@ public class MenuCustomer {
         //SHOPPING CART
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.setCustomer(customer);
-        shoppingCart.setConsoleProductArchiver(consoleProductArchiver);
         //LOCAL VARIABLES
         String selectedOption;
         Integer productId;
@@ -81,20 +80,21 @@ public class MenuCustomer {
                     case 1://DISPLAY PRODUCTS -> CELL/PC/CON/TV
                         /*------------------CHOOSE THE PRODUCT TYPE--------------------*/
                         Scanner sc = new Scanner(System.in);
-                        System.out.println("Which type? CELL/PC/CON/TV): ");
+                        System.out.println("Which type? CELL/PC/CONSOLE/TV): ");
                         while (!sc.hasNext(Pattern.compile("(CELL|PC|CONSOLE|TV)"))) {
                             System.out.println("That's not a valid product type!");
                             sc.next();
                         }
                         selectedOption = sc.nextLine();
+                        sc = new Scanner(System.in);
                         /*-----------------DISPLAY THE PROPER PRODUCT TYPE--------------------*/
-                        if(selectedOption.equals("cell")){
+                        if(selectedOption.equals("CELL")){
                             cellphoneProductPrinter.displayProductInfo(cellphoneProductArchiver);
-                        }else if(selectedOption.equals("pc")){
+                        }else if(selectedOption.equals("PC")){
                             computerProductPrinter.displayProductInfo(computerProductArchiver);
-                        }else if(selectedOption.equals("console")){
+                        }else if(selectedOption.equals("CONSOLE")){
                             consoleProductPrinter.displayProductInfo(consoleProductArchiver);
-                        } else if(selectedOption.equals("tv")){
+                        } else if(selectedOption.equals("TV")){
                             tvProductPrinter.displayProductInfo(tvProductArchiver);
                         }
                         sc = new Scanner(System.in);
@@ -107,20 +107,19 @@ public class MenuCustomer {
                         }
                         productId = sc.nextInt();
                         //UPDATING LISTs AND CREATING SHOPPING CART DATA
-                        if(selectedOption.equals("cell")){
+                        if(selectedOption.equals("CELL")){
                             cellphoneProductArchiver.deleteCellphoneProduct(productId);
                             shoppingCart.addConsole(consoleProductList,productId);
-                        }else if(selectedOption.equals("pc")){
+                        }else if(selectedOption.equals("PC")){
                             computerProductArchiver.deleteComputerProduct(productId);
-                        }else if(selectedOption.equals("console")){
+                        }else if(selectedOption.equals("CONSOLE")){
                             consoleProductArchiver.deleteConsoleProduct(productId);
-                        } else if(selectedOption.equals("tv")){
+                        } else if(selectedOption.equals("TV")){
                             tvProductArchiver.deleteTvProduct(productId);
                         }
                         break;
-                    case 2://CONSOLE PRODUCTS
-                        MenuConsole menuConsole = new MenuConsole();
-                        menuConsole.crudConsole();
+                    case 2://DISPLAY SHOPPING CAR
+                        shoppingCart.displayProductInfo(shoppingCart.getConsoleProductArchiver());
                         break;
                     case 0:
                         break;

@@ -1,19 +1,24 @@
 package product.computer;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import product.computer.interfaces.IComputerProductArchiver;
 import product.computer.interfaces.IComputerProductModifier;
 
 import java.util.ArrayList;
 
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class ComputerProductArchiver implements IComputerProductArchiver, IComputerProductModifier {
     ComputerProduct computerProduct = new ComputerProduct();
     ComputerProductPrinter productPrinter = new ComputerProductPrinter();
     public ArrayList<ComputerProduct> computerProductList = new ArrayList<>();
+
     @Override
     public void addComputerProduct(ComputerProduct product) {
         computerProductList.add(product);
     }
-
     @Override
     public void deleteComputerProduct(Integer productId) {
         boolean founded = false;
@@ -25,9 +30,7 @@ public class ComputerProductArchiver implements IComputerProductArchiver, ICompu
         }
         if (founded) {
             productPrinter.displayMessage("--------------!PRODUCT DELETED!-----------------");
-        }
-        else
-        {
+        }else {
             productPrinter.displayMessage("--------------!PRODUCT NOT FOUNDED!-----------------");
         }
     }

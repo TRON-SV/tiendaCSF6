@@ -1,18 +1,16 @@
 package User;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.Scanner;
-
+@AllArgsConstructor
+@Data
 public class Admin extends User implements ILogInUser {
-    public Admin() {
-        this.idUser = "AGroup3cfs";
-        this.userType = 1;
-        this.name = "Grupo 3";
-        this.password = "12345";
-        this.email = "grupo3@mail.com";
-    }
-
-    public Admin(String idUser, Integer userType, String name, String password, String email) {
-        super(idUser, userType, name, password, email);
+    @Builder
+    public Admin(String userId, Integer userType, String userName, String userPassword, String userEmail) {
+        super(userId,userType,userName,userPassword,userEmail);
     }
 
     @Override

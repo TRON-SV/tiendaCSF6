@@ -20,9 +20,9 @@ public @Data class ShoppingCart {
     ConsoleProductPrinter productPrinter = new ConsoleProductPrinter();
     private ArrayList<TvProduct> tvProductList;
     //---------------------------VARIABLES USED FOR CONSOLES------------------------------
-    ConsoleProductFiller consoleProductFiller;
-    ConsoleProductArchiver consoleProductArchiver;
-    ConsoleProductPrinter consoleProductPrinter;
+    ConsoleProductFiller consoleProductFiller = new ConsoleProductFiller();
+    ConsoleProductArchiver consoleProductArchiver = new ConsoleProductArchiver();
+    ConsoleProductPrinter consoleProductPrinter = new ConsoleProductPrinter();
 
     public void addConsole(ArrayList<ConsoleProduct> consoleProductList, Integer productId) {
         boolean isTheProductFounded = false;

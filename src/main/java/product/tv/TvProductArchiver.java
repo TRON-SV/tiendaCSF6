@@ -1,15 +1,19 @@
 package product.tv;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class TvProductArchiver implements ITvProductArchiver, ITvProductModifier {
     //VARIABLES DEFINITION
     TvProduct tvProduct = new TvProduct();
     TvProductPrinter productPrinter = new TvProductPrinter();
     public ArrayList<TvProduct> tvProductList = new ArrayList<TvProduct>();
-    public void setTvProductList(ArrayList<TvProduct> productList) {
-        this.tvProductList = tvProductList;
-    }
+
     @Override
     public void addTvProduct(TvProduct product) {
         this.tvProductList.add(product);

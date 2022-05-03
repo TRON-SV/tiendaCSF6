@@ -1,18 +1,18 @@
 package product.console;
 
-import java.util.ArrayList;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class ConsoleProductArchiver implements IConsoleProductArchiver, IConsoleProductModifier{
     //VARIABLES DEFINITION
     ConsoleProduct consoleProduct = new ConsoleProduct();
     ConsoleProductPrinter productPrinter = new ConsoleProductPrinter();
     public ArrayList<ConsoleProduct> consoleProductList = new ArrayList<ConsoleProduct>();
-    public ArrayList<ConsoleProduct> getConsoleProductList() {
-        return consoleProductList;
-    }
-    public void setConsoleProductList(ArrayList<ConsoleProduct> productList) {
-        this.consoleProductList = consoleProductList;
-    }
+
     @Override
     public void addConsoleProduct(ConsoleProduct product) {
         this.consoleProductList.add(product);

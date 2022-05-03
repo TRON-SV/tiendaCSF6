@@ -1,7 +1,12 @@
 package product.computer;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import product.computer.interfaces.IDisplayComputerProductInfo;
 
+@AllArgsConstructor @NoArgsConstructor
+@Data
 public class ComputerProductPrinter implements IDisplayComputerProductInfo {
     public void displayProductInfo(ComputerProductArchiver productArcheiver) {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
