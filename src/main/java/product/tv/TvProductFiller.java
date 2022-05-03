@@ -3,6 +3,7 @@ package product.tv;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import product.EProductType;
 
 @NoArgsConstructor
 public class TvProductFiller implements IFillSingleTvProduct, IFillSeveralTvProduct {
@@ -16,7 +17,7 @@ public class TvProductFiller implements IFillSingleTvProduct, IFillSeveralTvProd
         for(int i=0; i<quantity; i++) {
             TvProduct tvProduct = new TvProduct();
             tvProduct.setId(productArchiever.tvProductList.size());
-            tvProduct.setProductType("Console" + i);
+            tvProduct.setProductType(EProductType.TV);
             tvProduct.setPrice(500);
             tvProduct.setSerie("Product " + i);
             tvProduct.setBrand("Product brand" +i);

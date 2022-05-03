@@ -1,5 +1,7 @@
 package product.console;
 
+import product.EProductType;
+
 public class ConsoleProductFiller implements IFillSingleConsoleProduct, IFillSeveralConsoleProduct {
     @Override
     public void fillProduct(ConsoleProduct product, ConsoleProductArchiver productArchiver) {
@@ -11,7 +13,7 @@ public class ConsoleProductFiller implements IFillSingleConsoleProduct, IFillSev
         for(int i=0; i<quantity; i++) {
             ConsoleProduct consoleProduct = new ConsoleProduct();
             consoleProduct.setId(productArchiever.consoleProductList.size());
-            consoleProduct.setProductType("Console" + i);
+            consoleProduct.setProductType(EProductType.CONSOLE);
             consoleProduct.setPrice(500);
             consoleProduct.setSerie("Product " + i);
             consoleProduct.setBrand("Product brand" +i);

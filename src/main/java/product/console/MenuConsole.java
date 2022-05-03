@@ -12,6 +12,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import product.EProductType;
 
 import javax.mail.Message;
 import javax.mail.Multipart;
@@ -164,19 +165,11 @@ public class MenuConsole {
 
     public static ConsoleProduct captureConsoleProductData() {
         //DECLARING ALL PRODUCT RELATED VARIABLES
-        String productType;double price;String serie;String brand;double tax;Integer diskCapacity;boolean diskReader;
         ConsoleProduct product = new ConsoleProduct();
+        product.setProductType(EProductType.CONSOLE);
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the productType(Console/TV/PC): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setProductType(sc.nextLine());
-        sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
         System.out.println("Enter the Price: ");
         while (!sc.hasNextDouble()) {
             System.out.println("That's not a valid value (Double)!");

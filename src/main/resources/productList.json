@@ -1,6 +1,6 @@
 [ {
   "id" : 0,
-  "productType" : "Console0",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 0",
   "brand" : "Product brand0",
@@ -9,7 +9,7 @@
   "diskReader" : true
 }, {
   "id" : 1,
-  "productType" : "Console1",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 1",
   "brand" : "Product brand1",
@@ -18,7 +18,7 @@
   "diskReader" : true
 }, {
   "id" : 2,
-  "productType" : "Console2",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 2",
   "brand" : "Product brand2",
@@ -27,7 +27,7 @@
   "diskReader" : true
 }, {
   "id" : 3,
-  "productType" : "Console3",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 3",
   "brand" : "Product brand3",
@@ -36,7 +36,7 @@
   "diskReader" : true
 }, {
   "id" : 4,
-  "productType" : "Console4",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 4",
   "brand" : "Product brand4",
@@ -45,7 +45,7 @@
   "diskReader" : true
 }, {
   "id" : 5,
-  "productType" : "Console5",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 5",
   "brand" : "Product brand5",
@@ -54,7 +54,7 @@
   "diskReader" : true
 }, {
   "id" : 6,
-  "productType" : "Console6",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 6",
   "brand" : "Product brand6",
@@ -63,7 +63,7 @@
   "diskReader" : true
 }, {
   "id" : 7,
-  "productType" : "Console7",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 7",
   "brand" : "Product brand7",
@@ -71,21 +71,21 @@
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
-  "id" : 8,
-  "productType" : "Console8",
-  "price" : 500.0,
-  "serie" : "Product 8",
-  "brand" : "Product brand8",
-  "tax" : 500.0,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
   "id" : 9,
-  "productType" : "Console9",
+  "productType" : "CONSOLE",
   "price" : 500.0,
   "serie" : "Product 9",
   "brand" : "Product brand9",
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
+}, {
+  "id" : 9,
+  "productType" : "CONSOLE",
+  "price" : 123.0,
+  "serie" : "edasd",
+  "brand" : "sdasda",
+  "tax" : 123.0,
+  "diskCapacity" : 123,
+  "diskReader" : false
 } ]

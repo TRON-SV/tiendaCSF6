@@ -1,5 +1,6 @@
 package product.tv;
 
+import product.EProductType;
 import product.tv.TvProduct;
 import product.tv.TvProductArchiver;
 import product.tv.TvProductFiller;
@@ -106,21 +107,11 @@ public class MenuTv {
 
     public static TvProduct captureTvProductData() {
         //DECLARING ALL PRODUCT RELATED VARIABLES
-        String productType; double price; String serie; String brand; String screenSize;
-        String processor; String operatingSystem; Integer memoryRAM; Integer hardDrive;
-        Integer camera;
         TvProduct product = new TvProduct();
+        product.setProductType(EProductType.TV);
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the productType(Tv): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setProductType(sc.nextLine());
-        sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
         System.out.println("Enter the Price: ");
         while (!sc.hasNextDouble()) {
             System.out.println("That's not a valid value (Double)!");
@@ -182,7 +173,6 @@ public class MenuTv {
         }
         product.setSmart(sc.nextBoolean());
         sc = new Scanner(System.in);
-
 
         return product;
     }
