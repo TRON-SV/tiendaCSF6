@@ -3,6 +3,7 @@ package product.cellphone;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import product.EProductType;
 
 @NoArgsConstructor
 public class CellphoneProductFiller implements IFillSingleCellphoneProduct, IFillSeveralCellphoneProduct{
@@ -11,7 +12,7 @@ public class CellphoneProductFiller implements IFillSingleCellphoneProduct, IFil
         for(int i=0; i<quantity; i++) {
             CellphoneProduct cellphoneProduct = new CellphoneProduct();
             cellphoneProduct.setId(productArchiver.cellphoneProductList.size());
-            cellphoneProduct.setProductType("Console" + i);
+            cellphoneProduct.setProductType(EProductType.CELLPHONE);
             cellphoneProduct.setPrice(500);
             cellphoneProduct.setSerie("Product " + i);
             cellphoneProduct.setBrand("Product brand" +i);

@@ -1,6 +1,7 @@
 package product.computer;
 
 import lombok.NoArgsConstructor;
+import product.EProductType;
 import product.computer.interfaces.IFillSeveralComputerProduct;
 import product.computer.interfaces.IFillSingleComputerProduct;
 
@@ -17,7 +18,7 @@ public class ComputerProductFiller implements IFillSingleComputerProduct, IFillS
         for (int i = 0; i < quantity; i++) {
             ComputerProduct computerProduct = new ComputerProduct();
             computerProduct.setId(productArchiver.computerProductList.size());
-            computerProduct.setProductType("Computer" + i);
+            computerProduct.setProductType(EProductType.COMPUTER);
             computerProduct.setPrice(1000);
             computerProduct.setSerie("Product " + i);
             computerProduct.setBrand("Product brand" + i);

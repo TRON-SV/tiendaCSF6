@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor
 public @Data abstract class ProductAbstractClass {
     private Integer id;
-    private String productType;
+    private EProductType productType;
     private double price;
     private String serie;
     private String brand;

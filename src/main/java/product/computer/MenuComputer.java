@@ -1,5 +1,7 @@
 package product.computer;
 
+import product.EProductType;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -89,7 +91,7 @@ public class MenuComputer {
 
     public static ComputerProduct captureComputerProductData() {
         ComputerProduct product = new ComputerProduct();
-        product.setProductType("Computer");
+        product.setProductType(EProductType.COMPUTER);
 
         Scanner sc = new Scanner(System.in);
         /*------------------ASKING DATA--------------------*/

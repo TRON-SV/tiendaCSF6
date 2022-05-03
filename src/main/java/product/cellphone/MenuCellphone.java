@@ -1,5 +1,6 @@
 package product.cellphone;
 
+import product.EProductType;
 import product.console.ConsoleProduct;
 
 import java.util.InputMismatchException;
@@ -103,21 +104,11 @@ public class MenuCellphone {
 
     public static CellphoneProduct captureCellphoneProductData() {
         //DECLARING ALL PRODUCT RELATED VARIABLES
-        String productType; double price; String serie; String brand; String screenSize;
-        String processor; String operatingSystem; Integer memoryRAM; Integer hardDrive;
-        Integer camera;
         CellphoneProduct product = new CellphoneProduct();
+        product.setProductType(EProductType.CELLPHONE);
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the productType(Cellphone: ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setProductType(sc.nextLine());
-        sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
         System.out.println("Enter the Price: ");
         while (!sc.hasNextDouble()) {
             System.out.println("That's not a valid value (Double)!");
