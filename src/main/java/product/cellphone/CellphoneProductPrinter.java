@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor @NoArgsConstructor
-@Data
+@NoArgsConstructor
 public class CellphoneProductPrinter implements IDisplayCellphoneProductInfo{
     @Override
     public void displayMessage(String msg) {

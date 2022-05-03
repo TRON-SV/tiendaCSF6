@@ -1,11 +1,5 @@
 package product.console;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@AllArgsConstructor @NoArgsConstructor
-@Data
 public class ConsoleProductFiller implements IFillSingleConsoleProduct, IFillSeveralConsoleProduct {
     @Override
     public void fillProduct(ConsoleProduct product, ConsoleProductArchiver productArchiver) {

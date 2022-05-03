@@ -3,11 +3,13 @@ package product.computer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import product.IDeviceSwitcher;
 import product.ProductAbstractClass;
 
 @AllArgsConstructor
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class ComputerProduct extends ProductAbstractClass implements IDeviceSwitcher {
     private String operativeSystem;
     private String processor;

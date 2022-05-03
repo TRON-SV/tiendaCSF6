@@ -3,10 +3,12 @@ package product.cellphone;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import product.IDeviceSwitcher;
 import product.ProductAbstractClass;
 @AllArgsConstructor
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class CellphoneProduct extends ProductAbstractClass implements IDeviceSwitcher {
     private String screenSize;
     private String processor;

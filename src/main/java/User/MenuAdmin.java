@@ -28,11 +28,11 @@ public class MenuAdmin {
                 "0- Exit",
                 "/*---------------------------------------------------*/",
         };
-        Admin admin = new Admin();
+        Admin admin = new Admin("CGroup3CSF",2,"Customer 1","12345","any@hotmail.com");
         Scanner scan = new Scanner(System.in);
         int option = 1;
 
-        admin.logInUser();
+        //admin.logInUser();
         while (option!=0){
             printMenu(options);
             try{

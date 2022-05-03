@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor @NoArgsConstructor
-@Data
+@NoArgsConstructor
 public class TvProductFiller implements IFillSingleTvProduct, IFillSeveralTvProduct {
     @Override
     public void fillProduct(TvProduct product, TvProductArchiver productArchiver) {

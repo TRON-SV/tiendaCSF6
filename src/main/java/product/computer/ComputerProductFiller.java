@@ -1,13 +1,10 @@
 package product.computer;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import product.computer.interfaces.IFillSeveralComputerProduct;
 import product.computer.interfaces.IFillSingleComputerProduct;
 
-@AllArgsConstructor @NoArgsConstructor
-@Data
+@NoArgsConstructor
 public class ComputerProductFiller implements IFillSingleComputerProduct, IFillSeveralComputerProduct {
     @Override
     public void fillProduct(ComputerProduct product, ComputerProductArchiver productArchiver) {

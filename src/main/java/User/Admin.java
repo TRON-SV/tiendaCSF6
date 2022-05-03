@@ -3,10 +3,12 @@ package User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Scanner;
 @AllArgsConstructor
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class Admin extends User implements ILogInUser {
     @Builder
     public Admin(String userId, Integer userType, String userName, String userPassword, String userEmail) {
