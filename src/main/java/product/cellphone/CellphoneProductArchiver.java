@@ -21,12 +21,13 @@ public class CellphoneProductArchiver implements ICellphoneProductArchiver, ICel
     }
 
     @Override
-    public void deleteCellphoneProduct(Integer productSudoId) {
+    public void deleteCellphoneProduct(String productSudoId) {
         boolean isTheProductFounded = false;
         for(int i=0; i<cellphoneProductList.size(); i++){
-            if(cellphoneProductList.get(i).getId() == productSudoId){
+            if(cellphoneProductList.get(i).getId().equals(productSudoId)){
                 isTheProductFounded = true;
                 this.cellphoneProductList.remove(i);
+                break;
             }
         }
         if(isTheProductFounded==true){
@@ -37,15 +38,15 @@ public class CellphoneProductArchiver implements ICellphoneProductArchiver, ICel
     }
 
     @Override
-    public void modifyCellphoneProduct(CellphoneProduct product, int productId) {
+    public void modifyCellphoneProduct(CellphoneProduct product, String productId) {
         for(int i=0; i<cellphoneProductList.size(); i++){
-            if(cellphoneProductList.get(i).getId() == productId){
+            if(cellphoneProductList.get(i).getId().equals(productId)){
                 //PERFORMING A UPDATE OF THE PRODUCT DATA
                 cellphoneProductList.get(i).setProductType(product.getProductType());
+                cellphoneProductList.get(i).setName(product.getName());
                 cellphoneProductList.get(i).setPrice(product.getPrice());
-                cellphoneProductList.get(i).setSerie(product.getSerie());
-                cellphoneProductList.get(i).setTax(product.getTax());
                 cellphoneProductList.get(i).setBrand(product.getBrand());
+                cellphoneProductList.get(i).setTax(product.getTax());
                 cellphoneProductList.get(i).setScreenSize(product.getScreenSize());
                 cellphoneProductList.get(i).setProcessor(product.getProcessor());
                 cellphoneProductList.get(i).setOperatingSystem(product.getOperatingSystem());

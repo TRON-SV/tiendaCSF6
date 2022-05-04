@@ -1,6 +1,5 @@
 package product.console;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,8 +12,8 @@ public class ConsoleProductPrinter implements IDisplayConsoleProductInfo {
         for(int i=0; i<productArchiver.consoleProductList.size(); i++) {
             System.out.println("#: "+productArchiver.consoleProductList.get(i).getId()
                     +"      Type: "+productArchiver.consoleProductList.get(i).getProductType()
+                    +"      Name: "+productArchiver.consoleProductList.get(i).getName()
                     +"      Price: $"+productArchiver.consoleProductList.get(i).getPrice()
-                    +"      Serie: "+productArchiver.consoleProductList.get(i).getSerie()
                     +"      Brand: "+productArchiver.consoleProductList.get(i).getBrand()
                     +"      Tax: $"+productArchiver.consoleProductList.get(i).getTax()
                     +"      Disk Capacity: "+productArchiver.consoleProductList.get(i).getDiskCapacity()+"GB"

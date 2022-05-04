@@ -1,7 +1,5 @@
 package product.tv;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
@@ -12,8 +10,8 @@ public class TvProductPrinter implements IDisplayTvProductInfo {
         for(int i = 0; i<productArchiver.tvProductList.size(); i++) {
             System.out.println("#: "+productArchiver.tvProductList.get(i).getId()
                     +"      Type: "+productArchiver.tvProductList.get(i).getProductType()
+                    +"      Name: "+productArchiver.tvProductList.get(i).getName()
                     +"      Price: $"+productArchiver.tvProductList.get(i).getPrice()
-                    +"      Serie: "+productArchiver.tvProductList.get(i).getSerie()
                     +"      Brand: "+productArchiver.tvProductList.get(i).getBrand()
                     +"      Tax: $"+productArchiver.tvProductList.get(i).getTax()
                     +"      Television size: "+productArchiver.tvProductList.get(i).getTvsize()

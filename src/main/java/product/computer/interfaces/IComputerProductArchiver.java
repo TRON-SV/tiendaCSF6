@@ -4,5 +4,5 @@ import product.computer.ComputerProduct;
 
 public interface IComputerProductArchiver {
     void addComputerProduct(ComputerProduct product);
-    void deleteComputerProduct(Integer productId);
+    void deleteComputerProduct(String productId);
 }

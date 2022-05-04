@@ -5,11 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import product.IDeviceSwitcher;
+import product.IProduct;
 import product.ProductAbstractClass;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class CellphoneProduct extends ProductAbstractClass implements IDeviceSwitcher {
+public class CellphoneProduct extends ProductAbstractClass implements IProduct,IDeviceSwitcher {
     private String screenSize;
     private String processor;
     private String operatingSystem;

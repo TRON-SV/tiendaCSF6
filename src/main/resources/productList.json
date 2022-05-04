@@ -1,8 +1,8 @@
 [ {
   "id" : 0,
   "productType" : "CONSOLE",
+  "name" : "Product 0",
   "price" : 500.0,
-  "serie" : "Product 0",
   "brand" : "Product brand0",
   "tax" : 500.0,
   "diskCapacity" : 512,
@@ -10,8 +10,8 @@
 }, {
   "id" : 1,
   "productType" : "CONSOLE",
+  "name" : "Product 1",
   "price" : 500.0,
-  "serie" : "Product 1",
   "brand" : "Product brand1",
   "tax" : 500.0,
   "diskCapacity" : 512,
@@ -19,8 +19,8 @@
 }, {
   "id" : 2,
   "productType" : "CONSOLE",
+  "name" : "Product 2",
   "price" : 500.0,
-  "serie" : "Product 2",
   "brand" : "Product brand2",
   "tax" : 500.0,
   "diskCapacity" : 512,
@@ -28,8 +28,8 @@
 }, {
   "id" : 3,
   "productType" : "CONSOLE",
+  "name" : "Product 3",
   "price" : 500.0,
-  "serie" : "Product 3",
   "brand" : "Product brand3",
   "tax" : 500.0,
   "diskCapacity" : 512,
@@ -37,8 +37,8 @@
 }, {
   "id" : 4,
   "productType" : "CONSOLE",
+  "name" : "Product 4",
   "price" : 500.0,
-  "serie" : "Product 4",
   "brand" : "Product brand4",
   "tax" : 500.0,
   "diskCapacity" : 512,
@@ -46,46 +46,28 @@
 }, {
   "id" : 5,
   "productType" : "CONSOLE",
+  "name" : "Product 5",
   "price" : 500.0,
-  "serie" : "Product 5",
   "brand" : "Product brand5",
-  "tax" : 500.0,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : 6,
-  "productType" : "CONSOLE",
-  "price" : 500.0,
-  "serie" : "Product 6",
-  "brand" : "Product brand6",
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : 7,
   "productType" : "CONSOLE",
+  "name" : "Product 7",
   "price" : 500.0,
-  "serie" : "Product 7",
   "brand" : "Product brand7",
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
-  "id" : 9,
+  "id" : 8,
   "productType" : "CONSOLE",
+  "name" : "Product 8",
   "price" : 500.0,
-  "serie" : "Product 9",
-  "brand" : "Product brand9",
+  "brand" : "Product brand8",
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
-}, {
-  "id" : 9,
-  "productType" : "CONSOLE",
-  "price" : 123.0,
-  "serie" : "edasd",
-  "brand" : "sdasda",
-  "tax" : 123.0,
-  "diskCapacity" : 123,
-  "diskReader" : false
 } ]

@@ -1,7 +1,5 @@
 package product.cellphone;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
@@ -18,7 +16,7 @@ public class CellphoneProductPrinter implements IDisplayCellphoneProductInfo{
             System.out.println("#: "+productArchiver.cellphoneProductList.get(i).getId()
                     +"      Type: "+productArchiver.cellphoneProductList.get(i).getProductType()
                     +"      Price: $"+productArchiver.cellphoneProductList.get(i).getPrice()
-                    +"      Serie: "+productArchiver.cellphoneProductList.get(i).getSerie()
+                    +"      Name: "+productArchiver.cellphoneProductList.get(i).getName()
                     +"      Brand: "+productArchiver.cellphoneProductList.get(i).getBrand()
                     +"      Tax: $"+productArchiver.cellphoneProductList.get(i).getTax()
                     +"      Screen size: "+productArchiver.cellphoneProductList.get(i).getScreenSize()

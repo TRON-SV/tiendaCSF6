@@ -1,5 +1,5 @@
 package product.cellphone;
 
 public interface ICellphoneProductModifier {
-    void modifyCellphoneProduct(CellphoneProduct product, int productId);
+    void modifyCellphoneProduct(CellphoneProduct product, String productId);
 }

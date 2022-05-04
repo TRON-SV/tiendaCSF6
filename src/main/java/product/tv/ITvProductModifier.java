@@ -1,5 +1,5 @@
 package product.tv;
 
 public interface ITvProductModifier {
-    void modifyTvProduct(TvProduct product, int productId);
+    void modifyTvProduct(TvProduct product, String productId);
 }

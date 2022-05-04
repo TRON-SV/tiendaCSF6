@@ -5,11 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor @NoArgsConstructor
-public @Data abstract class ProductAbstractClass {
-    private Integer id;
+@Data
+public abstract class ProductAbstractClass implements IProduct{
+    private String id;
     private EProductType productType;
+    private String name;
     private double price;
-    private String serie;
     private String brand;
     private double tax;
 }
