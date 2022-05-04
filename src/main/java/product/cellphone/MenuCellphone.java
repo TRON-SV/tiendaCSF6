@@ -1,12 +1,9 @@
 package product.cellphone;
 
 import product.EProductType;
-import product.console.ConsoleProduct;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
 
 public class MenuCellphone {
     public MenuCellphone() {
@@ -35,7 +32,7 @@ public class MenuCellphone {
         CellphoneProductPrinter cellphoneProductPrinter = new CellphoneProductPrinter();
 
         cellphoneProductFiller.fillProducts(20, cellphoneProductArchiver);
-        Integer productId;
+        String productId;
 
         Scanner scanner = new Scanner(System.in);
         Scanner sc;
@@ -64,11 +61,12 @@ public class MenuCellphone {
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
                         System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "CELL-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         cellphoneProductArchiver.deleteCellphoneProduct(productId);
                         break;
                     case 4://UPDATE A PRODUCT
@@ -77,11 +75,12 @@ public class MenuCellphone {
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
                         System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "CELL-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         cellphoneProduct = captureCellphoneProductData();
                         cellphoneProductArchiver.modifyCellphoneProduct(cellphoneProduct,productId);
                         break;
@@ -118,12 +117,12 @@ public class MenuCellphone {
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();
-        System.out.println("Enter the Serie(String): ");
+        System.out.println("Enter the Name(String): ");
         while (!sc.hasNext("[A-Za-z]*")) {
             System.out.println("That's not a String!");
             sc.next();
         }
-        product.setSerie(sc.nextLine());
+        product.setName(sc.nextLine());
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();

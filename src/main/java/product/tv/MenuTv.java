@@ -1,15 +1,9 @@
 package product.tv;
 
 import product.EProductType;
-import product.tv.TvProduct;
-import product.tv.TvProductArchiver;
-import product.tv.TvProductFiller;
-import product.tv.TvProductPrinter;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
 
 public class MenuTv {
     public MenuTv() {
@@ -38,7 +32,7 @@ public class MenuTv {
         TvProductPrinter tvProductPrinter = new TvProductPrinter();
 
         tvProductFiller.fillProducts(20, tvProductArchiver);
-        Integer productId;
+        String productId;
 
         Scanner scanner = new Scanner(System.in);
         Scanner sc;
@@ -57,9 +51,6 @@ public class MenuTv {
                         /*------------------ADDING THE PRODUCT TO THE LIST--------------------*/
                         tvProductFiller.fillProduct(tvProduct, tvProductArchiver);
                         tvProductArchiver.addTvProduct(tvProduct);
-                        //IMPLEMENTING METHODS RELATED TO CLASS ConsoleProduct (SINGLE RESPONSIBILITY AND INTERFACE SEGREGATION)
-                       // tvProduct.turnOnDevice();
-                        //tvProduct.turnOffDevice();
                         break;
                     case 3://DELETE A PRODUCT
                         tvProductPrinter.displayProductInfo(tvProductArchiver);
@@ -67,11 +58,12 @@ public class MenuTv {
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
                         System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "TV-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         tvProductArchiver.deleteTvProduct(productId);
                         break;
                     case 4://UPDATE A PRODUCT
@@ -80,11 +72,12 @@ public class MenuTv {
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
                         System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "TV-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         tvProduct = captureTvProductData();
                         tvProductArchiver.modifyTvProduct(tvProduct,productId);
                         break;
@@ -126,7 +119,7 @@ public class MenuTv {
             System.out.println("That's not a String!");
             sc.next();
         }
-        product.setSerie(sc.nextLine());
+        product.setName(sc.nextLine());
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();

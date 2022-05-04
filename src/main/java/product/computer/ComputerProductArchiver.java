@@ -18,14 +18,16 @@ public class ComputerProductArchiver implements IComputerProductArchiver, ICompu
     @Override
     public void addComputerProduct(ComputerProduct product) {
         computerProductList.add(product);
+        productPrinter.displayMessage("--------------!PRODUCT "+ product.getId() +" ADDED!-----------------");
     }
     @Override
-    public void deleteComputerProduct(Integer productId) {
+    public void deleteComputerProduct(String productId) {
         boolean founded = false;
         for (int i = 0; i < computerProductList.size(); i++) {
-            if (computerProductList.get(i).getId() == productId) {
+            if (computerProductList.get(i).getId().equals(productId)) {
                 founded = true;
                 computerProductList.remove(i);
+                break;
             }
         }
         if (founded) {
@@ -36,15 +38,15 @@ public class ComputerProductArchiver implements IComputerProductArchiver, ICompu
     }
 
     @Override
-    public void modifyComputerProduct(ComputerProduct product, Integer productId) {
+    public void modifyComputerProduct(ComputerProduct product, String productId) {
         for(int i=0; i<computerProductList.size(); i++){
-            if(computerProductList.get(i).getId() == productId){
+            if(computerProductList.get(i).getId().equals(productId)){
                 //PERFORMING A UPDATE OF THE PRODUCT DATA
                 computerProductList.get(i).setProductType(product.getProductType());
+                computerProductList.get(i).setName(product.getName());
                 computerProductList.get(i).setPrice(product.getPrice());
-                computerProductList.get(i).setSerie(product.getSerie());
-                computerProductList.get(i).setTax(product.getTax());
                 computerProductList.get(i).setBrand(product.getBrand());
+                computerProductList.get(i).setTax(product.getTax());
                 computerProductList.get(i).setProcessor(product.getProcessor());
                 computerProductList.get(i).setOperativeSystem(product.getOperativeSystem());
                 computerProductList.get(i).setHardDisk(product.getHardDisk());

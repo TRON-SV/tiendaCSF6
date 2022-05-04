@@ -10,17 +10,17 @@ public class ComputerProductFiller implements IFillSingleComputerProduct, IFillS
     @Override
     public void fillProduct(ComputerProduct product, ComputerProductArchiver productArchiver) {
         productArchiver.computerProduct = product;
-        product.setId(productArchiver.computerProductList.size());
+        product.setId("PC-"+String.valueOf(productArchiver.computerProductList.size()));
     }
 
     @Override
     public void fillProducts(Integer quantity, ComputerProductArchiver productArchiver) {
         for (int i = 0; i < quantity; i++) {
             ComputerProduct computerProduct = new ComputerProduct();
-            computerProduct.setId(productArchiver.computerProductList.size());
+            computerProduct.setId("PC-"+String.valueOf(productArchiver.computerProductList.size()));
             computerProduct.setProductType(EProductType.COMPUTER);
+            computerProduct.setName("Product " + i);
             computerProduct.setPrice(1000);
-            computerProduct.setSerie("Product " + i);
             computerProduct.setBrand("Product brand" + i);
             computerProduct.setTax(700);
             computerProduct.setHardDisk(1000);

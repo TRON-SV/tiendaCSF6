@@ -4,8 +4,7 @@ import product.EProductType;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
+import java.util.regex.Pattern;
 
 public class MenuComputer {
     public static void printMenu(String[] options) {
@@ -31,7 +30,7 @@ public class MenuComputer {
         ComputerProductPrinter computerProductPrinter = new ComputerProductPrinter();
 
         computerProductFiller.fillProducts(20, computerProductArchiver);
-        int productId;
+        String productId, selectedOption;
 
         Scanner sc = new Scanner(System.in);
 
@@ -56,21 +55,25 @@ public class MenuComputer {
                     case 3:
                         // ---- Delete product
                         computerProductPrinter.displayProductInfo(computerProductArchiver);
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        System.out.println("Choose a product from the list (#): ");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "PC-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         computerProductArchiver.deleteComputerProduct(productId);
                         break;
                     case 4:
                         // ---- Modify product
                         computerProductPrinter.displayProductInfo(computerProductArchiver);
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        System.out.println("Choose a product from the list (0-9): ");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "PC-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         computerProduct = captureComputerProductData();
                         computerProductArchiver.modifyComputerProduct(computerProduct, productId);
                         break;
@@ -104,12 +107,12 @@ public class MenuComputer {
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();
-        System.out.println("Enter the Serie(String): ");
+        System.out.println("Enter the Name(String): ");
         while (!sc.hasNext("[A-Za-z]*")) {
             System.out.println("That's not a String!");
             sc.next();
         }
-        product.setSerie(sc.nextLine());
+        product.setName(sc.nextLine());
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();

@@ -3,25 +3,12 @@ package product.console;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import product.EProductType;
-
-import javax.mail.Message;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 
 public class MenuConsole {
     public static void printMenu(String[] options){
@@ -49,7 +36,7 @@ public class MenuConsole {
         ConsoleProductPrinter consoleProductPrinter = new ConsoleProductPrinter();
         //FILLING A FIXED SET OF PRODUCTS
         consoleProductFiller.fillProducts(10, consoleProductArchiver);
-        Integer productId;
+        String productId;
 
         Scanner scanner = new Scanner(System.in);
         Scanner sc;
@@ -77,12 +64,13 @@ public class MenuConsole {
                         sc = new Scanner(System.in);
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
-                        System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        System.out.println("Choose a product from the list (0-9): ");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "CON-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         consoleProductArchiver.deleteConsoleProduct(productId);
                         break;
                     case 4://UPDATE A PRODUCT
@@ -90,12 +78,13 @@ public class MenuConsole {
                         sc = new Scanner(System.in);
                         /*------------------CHOOSE A PRODUCT FROM THE LIST--------------------*/
                         sc.reset();
-                        System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNextInt()) {
-                            System.out.println("That's not a valid value (Integer)!");
+                        System.out.println("Choose a product from the list (0-9): ");
+                        while (!sc.hasNext("[0-9]*")) {
+                            System.out.println("That's not a valid Id!");
                             sc.next();
                         }
-                        productId = sc.nextInt();
+                        productId = "CON-"+sc.nextLine();
+                        sc = new Scanner(System.in);
                         consoleProduct = captureConsoleProductData();
                         consoleProductArchiver.modifyConsoleProduct(consoleProduct,productId);
                         break;
@@ -179,12 +168,12 @@ public class MenuConsole {
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();
-        System.out.println("Enter the Serie(String): ");
+        System.out.println("Enter the Name(String): ");
         while (!sc.hasNext("[A-Za-z]*")) {
             System.out.println("That's not a String!");
             sc.next();
         }
-        product.setSerie(sc.nextLine());
+        product.setName(sc.nextLine());
         sc = new Scanner(System.in);
         /*------------------ASKING NEXT DATA--------------------*/
         sc.reset();

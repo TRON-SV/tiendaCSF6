@@ -1,7 +1,5 @@
 package product.computer;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import product.computer.interfaces.IDisplayComputerProductInfo;
 
@@ -13,8 +11,8 @@ public class ComputerProductPrinter implements IDisplayComputerProductInfo {
             ComputerProduct computerProduct = productArcheiver.computerProductList.get(i);
             System.out.println("#: " + computerProduct.getId()
                     +"      Type: " + computerProduct.getProductType()
+                    +"      Name: " + computerProduct.getName()
                     +"      Price: $" + computerProduct.getPrice()
-                    +"      Serie: " + computerProduct.getSerie()
                     +"      Brand: " + computerProduct.getBrand()
                     +"      Tax: $" + computerProduct.getTax()
                     +"      CPU: " + computerProduct.getProcessor()
