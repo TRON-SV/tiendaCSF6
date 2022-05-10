@@ -1,6 +1,5 @@
 package User;
 
-import product.cellphone.*;
 import product.computer.*;
 import product.console.*;
 import product.tv.*;
@@ -30,12 +29,6 @@ public class MenuCustomer {
         Customer customer = new Customer("CGroup3CSF",2,"Customer 1","12345","any@hotmail.com");
         //customer.logInUser();
         //---------------------------VARIABLES USED FOR CELLPHONES------------------------------
-        CellphoneProduct cellphoneProduct = new CellphoneProduct();
-        CellphoneProductFiller cellphoneProductFiller = new CellphoneProductFiller();
-        CellphoneProductArchiver cellphoneProductArchiver = new CellphoneProductArchiver();
-        CellphoneProductPrinter cellphoneProductPrinter = new CellphoneProductPrinter();
-        //FILLING A FIXED SET OF PRODUCTS
-        cellphoneProductFiller.fillProducts(10, cellphoneProductArchiver);
         //---------------------------VARIABLES USED FOR COMPUTERS------------------------------
         ComputerProduct computerProduct = new ComputerProduct();
         ComputerProductFiller computerProductFiller = new ComputerProductFiller();
@@ -46,14 +39,14 @@ public class MenuCustomer {
         //---------------------------VARIABLES USED FOR CONSOLES------------------------------
         ConsoleProduct consoleProduct = new ConsoleProduct();
         ConsoleProductFiller consoleProductFiller = new ConsoleProductFiller();
-        ConsoleProductArchiver consoleProductArchiver = new ConsoleProductArchiver();
+        ConsoleProductManager consoleProductManager = new ConsoleProductManager();
         ConsoleProductPrinter consoleProductPrinter = new ConsoleProductPrinter();
         //FILLING A FIXED SET OF PRODUCTS
-        consoleProductFiller.fillProducts(10, consoleProductArchiver);
+        consoleProductFiller.fillProducts(10, consoleProductManager);
         //---------------------------VARIABLES USED FOR TVs------------------------------
         TvProduct tvProduct = new TvProduct();
         TvProductFiller tvProductFiller = new TvProductFiller();
-        TvProductArchiver tvProductArchiver = new TvProductArchiver();
+        TvProductManager tvProductArchiver = new TvProductManager();
         TvProductPrinter tvProductPrinter = new TvProductPrinter();
         //FILLING A FIXED SET OF PRODUCTS
         tvProductFiller.fillProducts(10, tvProductArchiver);
@@ -75,19 +68,17 @@ public class MenuCustomer {
                     case 1://DISPLAY PRODUCTS -> CELL/PC/CON/TV
                         /*------------------CHOOSE THE PRODUCT TYPE--------------------*/
                         Scanner sc = new Scanner(System.in);
-                        System.out.println("Which type? CELL/PC/CONSOLE/TV): ");
-                        while (!sc.hasNext(Pattern.compile("(CELL|cell|PC|pc|CONSOLE|console|TV|tv)"))) {
+                        System.out.println("Which type? PC/CONSOLE/TV): ");
+                        while (!sc.hasNext(Pattern.compile("(PC|pc|CONSOLE|console|TV|tv)"))) {
                             System.out.println("That's not a valid product type!");
                             sc.next();
                         }
                         selectedOption = sc.nextLine();
                         /*-----------------DISPLAY THE PROPER PRODUCT TYPE--------------------*/
-                        if(selectedOption.equals("CELL") || selectedOption.equals("cell")){
-                            cellphoneProductPrinter.displayProductInfo(cellphoneProductArchiver);
-                        }else if(selectedOption.equals("PC") || selectedOption.equals("pc")){
+                        if(selectedOption.equals("PC") || selectedOption.equals("pc")){
                             computerProductPrinter.displayProductInfo(computerProductArchiver);
                         }else if(selectedOption.equals("CONSOLE") || selectedOption.equals("console")){
-                            consoleProductPrinter.displayProductInfo(consoleProductArchiver);
+                            consoleProductPrinter.displayProductInfo(consoleProductManager);
                         } else if(selectedOption.equals("TV") || selectedOption.equals("tv")){
                             tvProductPrinter.displayProductInfo(tvProductArchiver);
                         }
@@ -100,18 +91,14 @@ public class MenuCustomer {
                             sc.next();
                         }
                         //UPDATING LISTs AND CREATING SHOPPING CART DATA
-                        if(selectedOption.equals("CELL") || selectedOption.equals("cell")){
-                            productId = "CELL-"+sc.nextLine();
-                            shoppingCart.addCellphone(cellphoneProductArchiver.getCellphoneProductList(),productId);
-                            cellphoneProductArchiver.deleteCellphoneProduct(productId);
-                        }else if(selectedOption.equals("PC") || selectedOption.equals("pc")){
+                        if(selectedOption.equals("PC") || selectedOption.equals("pc")){
                             productId = "PC-"+sc.nextLine();
                             shoppingCart.addComputer(computerProductArchiver.getComputerProductList(),productId);
                             computerProductArchiver.deleteComputerProduct(productId);
                         }else if(selectedOption.equals("CONSOLE") || selectedOption.equals("console")){
                             productId = "CON-"+sc.nextLine();
-                            shoppingCart.addConsole(consoleProductArchiver.getConsoleProductList(),productId);
-                            consoleProductArchiver.deleteConsoleProduct(productId);
+                            shoppingCart.addConsole(consoleProductManager.getConsoleProductList(),productId);
+                            consoleProductManager.deleteConsoleProduct(productId);
                         } else if(selectedOption.equals("TV") || selectedOption.equals("tv")){
                             productId = "TV-"+sc.nextLine();
                             shoppingCart.addTv(tvProductArchiver.getTvProductList(),productId);

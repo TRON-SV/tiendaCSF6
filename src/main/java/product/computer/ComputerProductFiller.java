@@ -20,16 +20,15 @@ public class ComputerProductFiller implements IFillSingleComputerProduct, IFillS
             computerProduct.setId("PC-"+String.valueOf(productArchiver.computerProductList.size()));
             computerProduct.setProductType(EProductType.COMPUTER);
             computerProduct.setName("Product " + i);
-            computerProduct.setPrice(1000);
+            computerProduct.setPrice(1000.99);
             computerProduct.setBrand("Product brand" + i);
-            computerProduct.setTax(700);
+            computerProduct.setTax(215.20);
             computerProduct.setHardDisk(1000);
             computerProduct.setOperativeSystem("Windows 10");
             computerProduct.setProcessor("AMD Ryzen 3");
             computerProduct.setMemoryRam(8);
-            // Casting to convert int to float value
-            computerProduct.setSize((float)i);
-            computerProduct.setDescription("Computer ref " + i);
+            computerProduct.setSize(Float.valueOf(i));
+            computerProduct.setDescription("Computer description " + i);
             productArchiver.addComputerProduct(computerProduct);
         }
     }

@@ -2,22 +2,26 @@ package product.console;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import product.console.interfaces.IDisplayConsoleProductInfo;
 
 @NoArgsConstructor
 @Data
 public class ConsoleProductPrinter implements IDisplayConsoleProductInfo {
+    private static final Logger LOGGER = LogManager.getLogger(ConsoleProductPrinter.class);
     @Override
-    public void displayProductInfo(ConsoleProductArchiver productArchiver) {
+    public void displayProductInfo(ConsoleProductManager productArchiver) {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        for(int i=0; i<productArchiver.consoleProductList.size(); i++) {
-            System.out.println("#: "+productArchiver.consoleProductList.get(i).getId()
-                    +"      Type: "+productArchiver.consoleProductList.get(i).getProductType()
-                    +"      Name: "+productArchiver.consoleProductList.get(i).getName()
-                    +"      Price: $"+productArchiver.consoleProductList.get(i).getPrice()
-                    +"      Brand: "+productArchiver.consoleProductList.get(i).getBrand()
-                    +"      Tax: $"+productArchiver.consoleProductList.get(i).getTax()
-                    +"      Disk Capacity: "+productArchiver.consoleProductList.get(i).getDiskCapacity()+"GB"
-                    +"      Disk Reader: "+productArchiver.consoleProductList.get(i).getDiskReader()
+        for(int i = 0; i<productArchiver.getConsoleProductList().size(); i++) {
+            System.out.println("#: "+productArchiver.getConsoleProductList().get(i).getId()
+                    +"      Type: "+productArchiver.getConsoleProductList().get(i).getProductType()
+                    +"      Name: "+productArchiver.getConsoleProductList().get(i).getName()
+                    +"      Price: $"+productArchiver.getConsoleProductList().get(i).getPrice()
+                    +"      Brand: "+productArchiver.getConsoleProductList().get(i).getBrand()
+                    +"      Tax: $"+productArchiver.getConsoleProductList().get(i).getTax()
+                    +"      Disk Capacity: "+productArchiver.getConsoleProductList().get(i).getDiskCapacity()+"GB"
+                    +"      Disk Reader: "+productArchiver.getConsoleProductList().get(i).getDiskReader()
 
             );
             System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -25,6 +29,6 @@ public class ConsoleProductPrinter implements IDisplayConsoleProductInfo {
     }
     @Override
     public void displayMessage(String msg) {
-        System.out.println(msg);
+        LOGGER.info(msg);
     }
 }

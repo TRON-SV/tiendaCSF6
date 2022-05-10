@@ -1,31 +1,34 @@
 package product.console;
 
 import lombok.*;
-import product.IDeviceSwitcher;
-import product.IPlayVideoGame;
-import product.IProduct;
-import product.ProductAbstractClass;
-//Open for Extension, Closed for Modification BY EXTENDING the ProductAbstractClass
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import product.*;
+
+//Open for Extension, Closed for Modification BY EXTENDING the AProduct
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ConsoleProduct extends ProductAbstractClass implements IProduct, IPlayVideoGame, IDeviceSwitcher {
+public class ConsoleProduct extends AProduct implements IPlayVideoGame, IDeviceSwitcher {
+    private static final Logger LOGGER = LogManager.getLogger(ConsoleProduct.class);
     private Integer diskCapacity;
     private Boolean diskReader;
 
     @Builder
-    public ConsoleProduct(){
+    public ConsoleProduct(String id, EProductType productType, String name, Double price, String brand, Double tax){
+        super(id,productType,name,price,brand,tax);
+    }
+    public ConsoleProduct() {
         super();
     }
-
     @Override
-    public void playVideoGame() { System.out.println("Playing a video game..."); }
+    public void playVideoGame() { LOGGER.info("Playing a video game..."); }
     @Override
     public void turnOnDevice() {
-        System.out.println("Turning ON Device...");
+        LOGGER.info("Turning ON Device...");
     }
     @Override
     public void turnOffDevice() {
-        System.out.println("Turning OFF Device...");
+        LOGGER.info("Turning OFF Device...");
     }
 }

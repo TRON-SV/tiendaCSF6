@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TvProductPrinter implements IDisplayTvProductInfo {
     @Override
-    public void displayProductInfo(TvProductArchiver productArchiver) {
+    public void displayProductInfo(TvProductManager productArchiver) {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         for(int i = 0; i<productArchiver.tvProductList.size(); i++) {
             System.out.println("#: "+productArchiver.tvProductList.get(i).getId()
