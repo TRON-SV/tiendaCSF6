@@ -1,6 +1,5 @@
 package User;
 
-import product.cellphone.MenuCellphone;
 import product.computer.MenuComputer;
 import product.console.MenuConsole;
 import product.tv.MenuTv;
@@ -21,10 +20,9 @@ public class MenuAdmin {
     public static void showMenuAdmin(){
         String[] options = {
                 "/*----------WELCOME ADMINISTRATOR----------*/",
-                "1- CELLPHONE PRODUCTS",
-                "2- CONSOLE PRODUCTS",
-                "3- TELEVISION PRODUCTS",
-                "4- COMPUTER PRODUCTS",
+                "1- CONSOLE PRODUCTS",
+                "2- TELEVISION PRODUCTS",
+                "3- COMPUTER PRODUCTS",
                 "0- Exit",
                 "/*---------------------------------------------------*/",
         };
@@ -38,19 +36,15 @@ public class MenuAdmin {
             try{
                 option = scan.nextInt();
                 switch (option) {
-                    case 1://CELLPHONE PRODUCTS
-                        MenuCellphone menuCellphone = new MenuCellphone();
-                        menuCellphone.crudCellphone();
-                        break;
-                    case 2://CONSOLE PRODUCTS
+                    case 1://CONSOLE PRODUCTS
                         MenuConsole menuConsole = new MenuConsole();
                         menuConsole.crudConsole();
                         break;
-                    case 3://TELEVISION PRODUCTS
+                    case 2://TELEVISION PRODUCTS
                         MenuTv menuTv = new MenuTv();
                         menuTv.crudTv();
                         break;
-                    case 4://COMPUTER PRODUCTS
+                    case 3://COMPUTER PRODUCTS
                         MenuComputer menuComputer = new MenuComputer();
                         menuComputer.crudComputer();
                         break;
