@@ -1,14 +1,20 @@
 package product;
 
 import lombok.*;
+import product.computer.ComputerProduct;
 import product.console.ConsoleProduct;
-import product.console.MenuConsole;
+import product.tv.TvProduct;
 
 import java.util.Scanner;
 @NoArgsConstructor @AllArgsConstructor
+@Data
 public class CaptureProductData {
     @Getter @Setter
-    private ConsoleProduct product;
+    private AProduct product;
+    private ConsoleProduct cProduct;
+    private ComputerProduct computerProduct;
+    private TvProduct tvProduct;
+
     private Scanner sc = new Scanner("");
 
     @Builder
@@ -28,8 +34,6 @@ public class CaptureProductData {
         return product.getId();
     }
     public void captureProductData() {
-        product.setProductType(EProductType.CONSOLE);
-
         /*------------------ASKING NEXT DATA--------------------*/
         sc = new Scanner(System.in);
         sc.reset();
@@ -68,7 +72,9 @@ public class CaptureProductData {
         product.setBrand(sc.nextLine());
         sc = new Scanner(System.in);
     }
-    public void captureConsoleProductData(){
+    public void captureConsoleData(){
+        product.setProductType(EProductType.CONSOLE);
+        cProduct = (ConsoleProduct) product;
         /*------------------ASKING NEXT DATA--------------------*/
         sc = new Scanner(System.in);
         sc.reset();
@@ -77,7 +83,7 @@ public class CaptureProductData {
             System.out.println("That's not a valid value (Integer)!");
             sc.next();
         }
-        product.setDiskCapacity(sc.nextInt());
+        cProduct.setDiskCapacity(sc.nextInt());
         /*------------------ASKING NEXT DATA--------------------*/
         sc = new Scanner(System.in);
         sc.reset();
@@ -86,7 +92,17 @@ public class CaptureProductData {
             System.out.println("That's not a valid value (Integer)!");
             sc.next();
         }
-        product.setDiskReader(sc.nextBoolean());
+        cProduct.setDiskReader(sc.nextBoolean());
         sc = new Scanner(System.in);
+    }
+    public void captureTvData(){
+        product.setProductType(EProductType.TV);
+        tvProduct = (TvProduct) product;
+        /*------------------ASKING NEXT DATA--------------------*/
+    }
+    public void captureComputerData(){
+        product.setProductType(EProductType.COMPUTER);
+        computerProduct = (ComputerProduct) product;
+        /*------------------ASKING NEXT DATA--------------------*/
     }
 }

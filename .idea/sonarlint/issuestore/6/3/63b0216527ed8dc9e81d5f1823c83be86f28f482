@@ -1,0 +1,42 @@
+
+p
+java:S1192p"UDefine a constant instead of duplicating this literal "That's not a String!" 5 times.(°šÔ‰úÿÿÿÿ
+`
+java:S1192o"JDefine a constant instead of duplicating this literal "[A-Za-z]*" 5 times.(‘êŞ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÂÛÑ®úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(²Û×âüÿÿÿÿ
+Y
+java:S1854"CRemove this useless assignment to local variable "computerProduct".(ÂŸ‰
+B
+java:S1659!",Declare "selectedOption" on a separate line.(Àšæ§
+I
+java:S1481!"3Remove this unused "selectedOption" local variable.(Àšæ§
+<	java:S131*""Add a default case to this switch.(­Ö¹§úÿÿÿÿ
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(Î§Æ“ùÿÿÿÿ
+N	java:S106<"9Replace this use of System.out or System.err by a logger.(©ºİ¤
+N	java:S106F"9Replace this use of System.out or System.err by a logger.(œÏŒÂ
+N	java:S106H"9Replace this use of System.out or System.err by a logger.(©ºİ¤
+M	java:S106U"9Replace this use of System.out or System.err by a logger.(ÊÄ
+S	java:S106Y"9Replace this use of System.out or System.err by a logger.(İ¾şÚùÿÿÿÿ
+N	java:S106e"9Replace this use of System.out or System.err by a logger.(ÓÂ¦„
+S	java:S106g"9Replace this use of System.out or System.err by a logger.(Æªß‘ùÿÿÿÿ
+M	java:S106n"9Replace this use of System.out or System.err by a logger.(ÉàÜ[
+S	java:S106p"9Replace this use of System.out or System.err by a logger.(°šÔ‰úÿÿÿÿ
+S	java:S106w"9Replace this use of System.out or System.err by a logger.(Ùí·‘ÿÿÿÿÿ
+S	java:S106y"9Replace this use of System.out or System.err by a logger.(Æªß‘ùÿÿÿÿ
+O	java:S106€"9Replace this use of System.out or System.err by a logger.(·®Ğæ
+T	java:S106‚"9Replace this use of System.out or System.err by a logger.(°šÔ‰úÿÿÿÿ
+O	java:S106‰"9Replace this use of System.out or System.err by a logger.(“æúÿ
+T	java:S106‹"9Replace this use of System.out or System.err by a logger.(°šÔ‰úÿÿÿÿ
+T	java:S106’"9Replace this use of System.out or System.err by a logger.(²Šä˜ÿÿÿÿÿ
+T	java:S106”"9Replace this use of System.out or System.err by a logger.(°šÔ‰úÿÿÿÿ
+N	java:S106›"9Replace this use of System.out or System.err by a logger.(Şš¨h
+O	java:S106"9Replace this use of System.out or System.err by a logger.(ûôäÓ
+T	java:S106¤"9Replace this use of System.out or System.err by a logger.( æ¿İşÿÿÿÿ
+O	java:S106¦"9Replace this use of System.out or System.err by a logger.(ŸÛÄ
+N	java:S106­"9Replace this use of System.out or System.err by a logger.(±šş[
+O	java:S106¯"9Replace this use of System.out or System.err by a logger.(ŸÛÄ
+T	java:S106¶"9Replace this use of System.out or System.err by a logger.(º®´şøÿÿÿÿ
+T	java:S106¸"9Replace this use of System.out or System.err by a logger.(°šÔ‰úÿÿÿÿ
+O
+java:S1128"4Remove this unused import 'java.util.regex.Pattern'.(Ã•…Äúÿÿÿÿ

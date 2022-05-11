@@ -1,0 +1,27 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÒÍ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÂÛÑ®úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¦­ì†şÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(ï•©Ó
+S
+java:S1854/"=Remove this useless assignment to local variable "tvProduct".(ßÊ¡ï
+X
+java:S1854("BRemove this useless assignment to local variable "consoleProduct".(°µÄø
+Y
+java:S1854!"CRemove this useless assignment to local variable "computerProduct".(ÂŸ‰
+V	java:S125"<This block of commented-out lines of code should be removed.(”¶÷”úÿÿÿÿ
+J
+java:S1481!"4Remove this unused "computerProduct" local variable.(ÂŸ‰
+I
+java:S1481("3Remove this unused "consoleProduct" local variable.(°µÄø
+D
+java:S1481/".Remove this unused "tvProduct" local variable.(ßÊ¡ï
+V	java:S125<"<This block of commented-out lines of code should be removed.(”¶÷”úÿÿÿÿ
+<	java:S131C""Add a default case to this switch.(­Ö¹§úÿÿÿÿ
+M	java:S106G"9Replace this use of System.out or System.err by a logger.(Ù““%
+S	java:S106I"9Replace this use of System.out or System.err by a logger.(×¡²Ìıÿÿÿÿ
+N	java:S106X"9Replace this use of System.out or System.err by a logger.(œÏŒÂ
+N	java:S106Z"9Replace this use of System.out or System.err by a logger.(©ºİ¤
+M	java:S106t"9Replace this use of System.out or System.err by a logger.(ÊÄ
+S	java:S106y"9Replace this use of System.out or System.err by a logger.(İ¾şÚùÿÿÿÿ

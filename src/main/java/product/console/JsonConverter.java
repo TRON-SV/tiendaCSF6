@@ -1,9 +1,11 @@
-package product;
+package product.console;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import product.console.ConsoleProduct;
 
 import java.io.File;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 @AllArgsConstructor @NoArgsConstructor
 @Data
 public class JsonConverter {
+    private static final Logger LOGGER = LogManager.getLogger(MenuConsole.class);
     String arrayToJson;
     ArrayList<ConsoleProduct> productList = new ArrayList<>();
     ObjectMapper objectMapper = new ObjectMapper();
@@ -21,21 +24,22 @@ public class JsonConverter {
     }
     public void exportToJson(){
         try {
-            objectMapper = new ObjectMapper();
-            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("src/main/resources/productList.json"), getProductList());
+            objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File("src/main/resources/conProductList.json"), getProductList());
             System.out.println("PRODUCTS EXPORTED TO -> src/main/resources/productList.json");
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            LOGGER.fatal(e.getMessage());
+            LOGGER.fatal("An unexpected error happened. Please try again" + e, e);
         }
     }
     public ArrayList<ConsoleProduct> importFromJson(){
         try {
             TypeReference<ArrayList<ConsoleProduct>> mapType = new TypeReference<>() {};
-            setProductList(objectMapper.readValue(new File("src/main/resources/productList.json"),mapType));
+            setProductList(objectMapper.readValue(new File("src/main/resources/conProductList.json"),mapType));
             System.out.println("!Loaded Data From JSON file!");
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            LOGGER.fatal(e.getMessage());
+            LOGGER.fatal("An unexpected error happened. Please try again" + e, e);
         }
         return getProductList();
     }

@@ -1,0 +1,26 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÒÍ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÂÛÑ®úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¦­ì†şÿÿÿÿ
+O
+java:S1854"9Remove this useless assignment to local variable "admin".(¢äÁå
+@
+java:S1481"*Remove this unused "admin" local variable.(¢äÁå
+V	java:S125!"<This block of commented-out lines of code should be removed.(çÚ”üÿÿÿÿ
+<	java:S131&""Add a default case to this switch.(­Ö¹§úÿÿÿÿ
+H
+java:S2440("+Remove this instantiation of "MenuConsole".(ë¹Ûœ8Ç†šİŠ0
+W
+java:S2209)"5Change this instance-reference to a static reference.(è¼¼€ÿÿÿÿÿ8È†šİŠ0
+H
+java:S2440,"&Remove this instantiation of "MenuTv".(ıãşùûÿÿÿÿ8É†šİŠ0
+R
+java:S2209-"5Change this instance-reference to a static reference.(ºÍ˜“8Ê†šİŠ0
+N
+java:S24400",Remove this instantiation of "MenuComputer".(¾®–îıÿÿÿÿ8Ë†šİŠ0
+R
+java:S22091"5Change this instance-reference to a static reference.(ôõÚË8Ì†šİŠ0
+M	java:S1067"9Replace this use of System.out or System.err by a logger.(ÊÄ
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(İ¾şÚùÿÿÿÿ
+P
+java:S2209D"5Change this instance-reference to a static reference.( Ëø—şÿÿÿÿ

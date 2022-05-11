@@ -5,14 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import product.IProduct;
 import product.console.interfaces.IConsoleProductManager;
 import product.console.interfaces.IConsoleProductModifier;
 
 import java.util.ArrayList;
 @AllArgsConstructor @NoArgsConstructor
 @Data
-public class ConsoleProductManager implements IConsoleProductManager, IConsoleProductModifier, IProduct {
+public class ConsoleProductManager implements IConsoleProductManager, IConsoleProductModifier {
     private static final Logger LOGGER = LogManager.getLogger(ConsoleProductManager.class);
 
     //VARIABLES DEFINITION
@@ -22,8 +21,7 @@ public class ConsoleProductManager implements IConsoleProductManager, IConsolePr
 
     @Override
     public Boolean addConsoleProduct(ConsoleProduct product) {
-        this.consoleProductList.add(product);
-        return true;
+        return consoleProductList.add(product);
     }
     @Override
     public Boolean deleteConsoleProduct(String productId) {
@@ -49,6 +47,7 @@ public class ConsoleProductManager implements IConsoleProductManager, IConsolePr
         return product.getId().equals(productId);
     }
     public void setProductData(ConsoleProduct productSource, ConsoleProduct productNew){
+        productSource.setId(productNew.getId());
         productSource.setProductType(productNew.getProductType());
         productSource.setName(productNew.getName());
         productSource.setPrice(productNew.getPrice());
@@ -57,5 +56,9 @@ public class ConsoleProductManager implements IConsoleProductManager, IConsolePr
         productSource.setDiskCapacity(productNew.getDiskCapacity());
         productSource.setDiskReader(productNew.getDiskReader());
     }
-
+    public String generateId(){
+        String patter = getConsoleProductList().get(getConsoleProductList().size()-1).getId().replaceFirst("CON-","");
+        patter = "CON-"+ (Integer.valueOf(patter) + 1);
+        return patter;
+    }
 }

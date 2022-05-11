@@ -11,17 +11,17 @@ import product.console.interfaces.IDisplayConsoleProductInfo;
 public class ConsoleProductPrinter implements IDisplayConsoleProductInfo {
     private static final Logger LOGGER = LogManager.getLogger(ConsoleProductPrinter.class);
     @Override
-    public void displayProductInfo(ConsoleProductManager productArchiver) {
+    public void displayProductInfo(ConsoleProductManager productManager) {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        for(int i = 0; i<productArchiver.getConsoleProductList().size(); i++) {
-            System.out.println("#: "+productArchiver.getConsoleProductList().get(i).getId()
-                    +"      Type: "+productArchiver.getConsoleProductList().get(i).getProductType()
-                    +"      Name: "+productArchiver.getConsoleProductList().get(i).getName()
-                    +"      Price: $"+productArchiver.getConsoleProductList().get(i).getPrice()
-                    +"      Brand: "+productArchiver.getConsoleProductList().get(i).getBrand()
-                    +"      Tax: $"+productArchiver.getConsoleProductList().get(i).getTax()
-                    +"      Disk Capacity: "+productArchiver.getConsoleProductList().get(i).getDiskCapacity()+"GB"
-                    +"      Disk Reader: "+productArchiver.getConsoleProductList().get(i).getDiskReader()
+        for(int i = 0; i<productManager.getConsoleProductList().size(); i++) {
+            System.out.println("#: "+productManager.getConsoleProductList().get(i).getId()
+                    +"      Type: "+productManager.getConsoleProductList().get(i).getProductType()
+                    +"      Name: "+productManager.getConsoleProductList().get(i).getName()
+                    +"      Price: $"+productManager.getConsoleProductList().get(i).getPrice()
+                    +"      Brand: "+productManager.getConsoleProductList().get(i).getBrand()
+                    +"      Tax: $"+productManager.getConsoleProductList().get(i).getTax()
+                    +"      Disk Capacity: "+productManager.getConsoleProductList().get(i).getDiskCapacity()+"GB"
+                    +"      Disk Reader: "+productManager.getConsoleProductList().get(i).getDiskReader()
 
             );
             System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");

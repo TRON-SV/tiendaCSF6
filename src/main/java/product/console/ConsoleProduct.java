@@ -4,6 +4,7 @@ import lombok.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import product.*;
+import product.console.interfaces.IPlayVideoGame;
 
 //Open for Extension, Closed for Modification BY EXTENDING the AProduct
 @AllArgsConstructor
