@@ -138,3 +138,5 @@ java.util.InputMismatchException: null
 2022-05-11 00:12:42,313 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
 2022-05-11 00:12:44,191 ERROR p.c.MenuConsole [main] --------------!COULDN'T FIND THE PRODUCT!--------------
 2022-05-11 00:12:44,191 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:13:10,479 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:13:23,566 INFO p.c.MenuConsole [main] class product.console.MenuConsole

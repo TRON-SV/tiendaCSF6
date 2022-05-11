@@ -5,7 +5,10 @@ import product.computer.ComputerProduct;
 import product.console.ConsoleProduct;
 import product.tv.TvProduct;
 
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
 @NoArgsConstructor @AllArgsConstructor
 @Data
 public class CaptureProductData {
@@ -21,7 +24,7 @@ public class CaptureProductData {
     public CaptureProductData(ConsoleProduct product){
         this.product = product;
     }
-
+    public CaptureProductData(AProduct product){ this.product = product; }
     public String captureProductId(String prefix){
         sc = new Scanner(System.in);
         sc.reset();
@@ -32,6 +35,18 @@ public class CaptureProductData {
         product.setId(prefix+sc.nextLine());
         sc = new Scanner(System.in);
         return product.getId();
+    }
+    //Function use on thr ShoppingCart Class
+    public EProductType captureProductType(){
+        /*------------------CHOOSE THE PRODUCT TYPE--------------------*/
+        Scanner sc = new Scanner(System.in); sc.reset();
+        System.out.println("Which type? PC/CONSOLE/TV): ");
+        while (!sc.hasNext(Pattern.compile("(PC|pc|CONSOLE|console|TV|tv)"))) {
+            System.out.println("That's not a valid product type!");
+            sc.next();
+        }
+        product.setProductType(EProductType.valueOf(sc.nextLine().toUpperCase()));
+        return product.getProductType();
     }
     public void captureProductData() {
         /*------------------ASKING NEXT DATA--------------------*/

@@ -3,6 +3,7 @@ package User;
 import product.computer.*;
 import product.console.*;
 import product.tv.*;
+import shoppingcar.CartPrinter;
 import shoppingcar.ShoppingCart;
 
 import java.util.InputMismatchException;
@@ -28,7 +29,6 @@ public class MenuCustomer {
         //CREATING CUSTOMER USER AND SHOPPING CART DATA
         Customer customer = new Customer("CGroup3CSF",2,"Customer 1","12345","any@hotmail.com");
         //customer.logInUser();
-        //---------------------------VARIABLES USED FOR CELLPHONES------------------------------
         //---------------------------VARIABLES USED FOR COMPUTERS------------------------------
         ComputerProduct computerProduct = new ComputerProduct();
         ComputerProductFiller computerProductFiller = new ComputerProductFiller();
@@ -53,6 +53,7 @@ public class MenuCustomer {
         //SHOPPING CART
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.setCustomer(customer);
+        CartPrinter cartPrinter = new CartPrinter(shoppingCart);
         //LOCAL VARIABLES
         String selectedOption;
         String productId;
@@ -106,8 +107,8 @@ public class MenuCustomer {
                         }
                         break;
                     case 2://DISPLAY SHOPPING CAR
-                        shoppingCart.setCellphoneCounter(0); shoppingCart.setComputerCounter(0); shoppingCart.setConsoleCounter(0); shoppingCart.setTvCounter(0);
-                        shoppingCart.displayProductInfo(shoppingCart.getIProductList());
+                        shoppingCart.setComputerCounter(0); shoppingCart.setConsoleCounter(0); shoppingCart.setTvCounter(0);
+                        cartPrinter.displayProductInfo(shoppingCart.getIProductList());
                         break;
                     case 0:
                         break;
