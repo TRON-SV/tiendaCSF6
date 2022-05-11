@@ -1,9 +1,6 @@
 package product.console;
 
 import junit.framework.TestCase;
-import org.junit.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class ConsoleProductManagerTest extends TestCase {
 
@@ -71,5 +68,18 @@ public class ConsoleProductManagerTest extends TestCase {
         boolean modified = productManager.modifyProduct(product2, product.getId());
         System.out.println("Product modified?: " + modified + "\n");
         assertTrue(modified);
+    }
+
+    public void testGenerateId() {
+        ConsoleProduct product = new ConsoleProduct();
+        product.setId(productManager.generateId());
+        product.setDiskCapacity(1000);
+        product.setDiskReader(false);
+        productManager.addConsoleProduct(product);
+        System.out.println("Product inserted");
+
+        System.out.println("Expected: CON-0");
+        System.out.println("Result: " + product.getId());
+        assertEquals(product.getId(),"CON-0");
     }
 }
