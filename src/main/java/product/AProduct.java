@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor @NoArgsConstructor
 @Data
-public abstract class AProduct implements IProduct{
+public abstract class AProduct {
     private String id;
     private EProductType productType;
     private String name;

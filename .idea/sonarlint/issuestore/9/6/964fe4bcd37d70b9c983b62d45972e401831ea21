@@ -1,0 +1,43 @@
+
+l
+java:S1192n"ODefine a constant instead of duplicating this literal "      Price: $" 3 times.(Ôœ››8Ô…ÎÙŠ0
+—
+java:S1192<"uDefine a constant instead of duplicating this literal "--------------!PRODUCT NOT FOUNDED!-----------------" 3 times.(ÂÍúüÿÿÿÿ8ÙÍÙŠ0
+o
+java:S1192l"MDefine a constant instead of duplicating this literal "      Type: " 3 times.(›º¥úÿÿÿÿ8Ú…ÎÙŠ0
+j
+java:S1192m"MDefine a constant instead of duplicating this literal "      Name: " 3 times.(´£Š8Ú…ÎÙŠ0
+o
+java:S1192p"MDefine a constant instead of duplicating this literal "      Tax: $" 3 times.(ÇˆŠÛıÿÿÿÿ8Ú…ÎÙŠ0
+
+java:S1192:"€Define a constant instead of duplicating this literal "--------------!PRODUCT MOVED TO SHOPPING CART!-----------------" 3 times.(Ğìò„8ãÍÙŠ0
+p
+java:S1192o"NDefine a constant instead of duplicating this literal "      Brand: " 3 times.(’à”Æüÿÿÿÿ8ß…ÎÙŠ0
+†
+java:S1319*"kThe type of "productList" should be an interface such as "List" rather than the implementation "ArrayList".(òŞÅŸúÿÿÿÿ
+
+java:S1319?"kThe type of "productList" should be an interface such as "List" rather than the implementation "ArrayList".(èÉÌü
+
+java:S1319R"kThe type of "productList" should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ·º
+†
+java:S1319e"kThe type of "productList" should be an interface such as "List" rather than the implementation "ArrayList".(ÌŞÇõüÿÿÿÿ
+Z
+java:S2583L"DChange this condition so that it does not always evaluate to "false"(üĞá«
+Z
+java:S25839"DChange this condition so that it does not always evaluate to "false"(üĞá«
+Z
+java:S2583_"DChange this condition so that it does not always evaluate to "false"(üĞá«
+b
+java:S1659 "MDeclare "cellphoneCounter" and all following declarations on a separate line.(ÍÏ´
+]
+java:S1854."GRemove this useless assignment to local variable "isTheProductFounded".(¸½ç£
+]
+java:S1854C"GRemove this useless assignment to local variable "isTheProductFounded".(¸½ç£
+]
+java:S1854V"GRemove this useless assignment to local variable "isTheProductFounded".(¸½ç£
+N	java:S106f"9Replace this use of System.out or System.err by a logger.(ìÑéã
+u	java:S131i"YComplete cases by adding the missing enum constants or add a default case to this switch.(ú¼­8©œÎÙŠ0
+S	java:S106k"9Replace this use of System.out or System.err by a logger.(…ŠÖ“ûÿÿÿÿ
+S	java:S106{"9Replace this use of System.out or System.err by a logger.(…ŠÖ“ûÿÿÿÿ
+T	java:S106‡"9Replace this use of System.out or System.err by a logger.(…ŠÖ“ûÿÿÿÿ
+O	java:S106”"9Replace this use of System.out or System.err by a logger.(È†ï‘

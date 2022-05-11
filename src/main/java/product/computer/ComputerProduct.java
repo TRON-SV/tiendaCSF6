@@ -6,12 +6,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import product.AProduct;
 import product.IDeviceSwitcher;
-import product.IProduct;
 
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ComputerProduct extends AProduct implements IProduct, IDeviceSwitcher {
+public class ComputerProduct extends AProduct implements IDeviceSwitcher {
     private String operativeSystem;
     private String processor;
     private Float size;

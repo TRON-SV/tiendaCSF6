@@ -1,0 +1,142 @@
+2022-05-10 23:29:25,810 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:29:28,882 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-10 23:29:31,890 DEBUG p.c.MenuConsole [main] --------------!PRODUCT DELETED!-----------------
+2022-05-10 23:29:31,891 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:30:37,800 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:30:45,685 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-10 23:30:49,222 DEBUG p.c.MenuConsole [main] --------------!PRODUCT DELETED!-----------------
+2022-05-10 23:30:49,222 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:35:22,293 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:35:25,736 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:35:35,657 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:37:40,352 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:37:43,236 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:37:43,236 ERROR p.c.MenuConsole [main] {}
+java.util.InputMismatchException: null
+	at java.util.Scanner.throwFor(Scanner.java:939) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
+	at product.console.MenuConsole.crudConsole(MenuConsole.java:45) ~[classes/:?]
+	at product.console.MenuConsole.main(MenuConsole.java:104) ~[classes/:?]
+2022-05-10 23:37:43,247 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:43:27,752 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:43:30,519 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:43:30,520 ERROR p.c.MenuConsole [main] InputMismatchException: java.util.InputMismatchException
+2022-05-10 23:43:30,520 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:45:26,506 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:45:29,063 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9 java.util.InputMismatchException
+2022-05-10 23:45:29,063 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:47:08,522 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:47:38,665 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:47:43,845 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:47:43,846 FATAL p.c.MenuConsole [main] [java.base/java.util.Scanner.throwFor(Scanner.java:939), java.base/java.util.Scanner.next(Scanner.java:1594), java.base/java.util.Scanner.nextInt(Scanner.java:2258), java.base/java.util.Scanner.nextInt(Scanner.java:2212), product.console.MenuConsole.crudConsole(MenuConsole.java:45), product.console.MenuConsole.main(MenuConsole.java:104)]
+2022-05-10 23:47:43,847 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:50:19,338 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:50:22,395 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:50:22,395 FATAL p.c.MenuConsole [main] {}
+java.util.InputMismatchException: null
+	at product.console.MenuConsole.crudConsole(MenuConsole.java:92) ~[classes/:?]
+	at product.console.MenuConsole.main(MenuConsole.java:104) ~[classes/:?]
+2022-05-10 23:50:22,405 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:51:12,347 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:51:17,175 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:51:17,175 FATAL p.c.MenuConsole [main] {}
+java.util.InputMismatchException: null
+	at java.util.Scanner.throwFor(Scanner.java:939) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
+	at product.console.MenuConsole.crudConsole(MenuConsole.java:45) ~[classes/:?]
+	at product.console.MenuConsole.main(MenuConsole.java:104) ~[classes/:?]
+2022-05-10 23:51:17,185 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:53:02,862 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-10 23:53:05,232 ERROR p.c.MenuConsole [main] Please enter an integer value between 1 and 9
+2022-05-10 23:53:05,232 FATAL p.c.MenuConsole [main] {}
+java.util.InputMismatchException: null
+	at java.util.Scanner.throwFor(Scanner.java:939) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
+	at product.console.MenuConsole.crudConsole(MenuConsole.java:45) ~[classes/:?]
+	at product.console.MenuConsole.main(MenuConsole.java:105) ~[classes/:?]
+2022-05-10 23:53:05,243 ERROR p.c.MenuConsole [main] RunTime Exception: java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at java.util.Scanner.throwFor(Scanner.java:939) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1594) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2258) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2212) ~[?:?]
+	at product.console.MenuConsole.crudConsole(MenuConsole.java:45) ~[classes/:?]
+	at product.console.MenuConsole.main(MenuConsole.java:105) ~[classes/:?]
+2022-05-10 23:53:05,244 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:01:15,727 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:01:15,730 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:01:15,730 INFO p.c.MenuConsole [main] 1- Display Products
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] 2- Add Product
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] 3- Delete a Product
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] 4- Modify Product Data
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] 5- Generate JSON File
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] 6- Load From Json File
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] 0- Exit
+2022-05-11 00:01:15,731 INFO p.c.MenuConsole [main] /*---------------------------------------------------*/
+2022-05-11 00:01:54,627 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:01:54,631 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,631 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,631 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,631 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,631 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,631 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,632 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,632 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:01:54,632 INFO p.c.MenuConsole [main] [Ljava.lang.String;@611889f4
+2022-05-11 00:02:54,193 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:02:54,196 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,197 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,197 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,197 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,197 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,197 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,198 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,198 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:02:54,198 INFO p.c.MenuConsole [main] /*------------------------MANAGE CONSOLES---------------------------*/
+2022-05-11 00:04:52,258 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:04:52,262 INFO p.c.MenuConsole [main] %nChoose your option: 
+2022-05-11 00:05:23,595 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:05:23,599 INFO p.c.MenuConsole [main] %n Choose your option: 
+2022-05-11 00:06:07,733 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:06:07,737 INFO p.c.MenuConsole [main] Choose your option: 
+2022-05-11 00:07:00,307 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:08:07,892 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:08:43,988 INFO p.c.ConsoleProduct [main] Playing a video game...
+2022-05-11 00:08:43,989 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:09:20,588 INFO p.c.MenuConsole [main] --------------!PRODUCT UPDATED!-----------------
+2022-05-11 00:09:20,588 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:09:23,112 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:09:52,103 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-11 00:09:58,184 INFO p.c.MenuConsole [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 00:09:58,184 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:10:06,705 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:11:10,028 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:11:42,349 INFO p.c.ConsoleProduct [main] Playing a video game...
+2022-05-11 00:11:42,349 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:11:45,450 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:11:57,882 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:01,118 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-11 00:12:02,130 INFO p.c.MenuConsole [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 00:12:02,130 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:04,985 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-11 00:12:09,444 INFO p.c.MenuConsole [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 00:12:09,445 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:11,687 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-11 00:12:13,110 INFO p.c.MenuConsole [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 00:12:13,110 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:15,818 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-11 00:12:26,486 ERROR p.c.MenuConsole [main] --------------!COULDN'T FIND THE PRODUCT!--------------
+2022-05-11 00:12:26,487 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:34,108 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:34,920 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:12:42,313 INFO p.c.MenuConsole [main] ConsoleProductPrinter()
+2022-05-11 00:12:44,191 ERROR p.c.MenuConsole [main] --------------!COULDN'T FIND THE PRODUCT!--------------
+2022-05-11 00:12:44,191 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:13:10,479 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 00:13:23,566 INFO p.c.MenuConsole [main] class product.console.MenuConsole

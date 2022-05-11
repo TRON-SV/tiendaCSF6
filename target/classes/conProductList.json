@@ -4,7 +4,7 @@
   "name" : "Product 0",
   "price" : 500.0,
   "brand" : "Product brand0",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -13,7 +13,7 @@
   "name" : "Product 1",
   "price" : 500.0,
   "brand" : "Product brand1",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -22,7 +22,7 @@
   "name" : "Product 2",
   "price" : 500.0,
   "brand" : "Product brand2",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -31,7 +31,7 @@
   "name" : "Product 3",
   "price" : 500.0,
   "brand" : "Product brand3",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -40,7 +40,7 @@
   "name" : "Product 4",
   "price" : 500.0,
   "brand" : "Product brand4",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -49,7 +49,7 @@
   "name" : "Product 5",
   "price" : 500.0,
   "brand" : "Product brand5",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -58,7 +58,7 @@
   "name" : "Product 6",
   "price" : 500.0,
   "brand" : "Product brand6",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -67,25 +67,34 @@
   "name" : "Product 7",
   "price" : 500.0,
   "brand" : "Product brand7",
-  "tax" : 500.0,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : "CON-8",
-  "productType" : "CONSOLE",
-  "name" : "Product 8",
-  "price" : 500.0,
-  "brand" : "Product brand8",
-  "tax" : 500.0,
+  "tax" : 120.5,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : "CON-9",
   "productType" : "CONSOLE",
-  "name" : "Product 9",
-  "price" : 500.0,
-  "brand" : "Product brand9",
-  "tax" : 500.0,
-  "diskCapacity" : 512,
+  "name" : "PLAY STATION NEW CONSOLE",
+  "price" : 1200.0,
+  "brand" : "SONY",
+  "tax" : 52.21,
+  "diskCapacity" : 1000,
+  "diskReader" : false
+}, {
+  "id" : "CON-10",
+  "productType" : "CONSOLE",
+  "name" : "XBOX SERIES X",
+  "price" : 1500.0,
+  "brand" : "MICROSOFT",
+  "tax" : 34.23,
+  "diskCapacity" : 2000,
   "diskReader" : true
+}, {
+  "id" : "CON-11",
+  "productType" : "CONSOLE",
+  "name" : "NINTENDO SWITCH",
+  "price" : 350.0,
+  "brand" : "NINTENDO",
+  "tax" : 100.0,
+  "diskCapacity" : 32,
+  "diskReader" : false
 } ]
