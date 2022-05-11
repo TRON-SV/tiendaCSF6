@@ -62,15 +62,6 @@
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
-  "id" : 7,
-  "productType" : "Console7",
-  "price" : 500.0,
-  "serie" : "Product 7",
-  "brand" : "Product brand7",
-  "tax" : 500.0,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
   "id" : 8,
   "productType" : "Console8",
   "price" : 500.0,
