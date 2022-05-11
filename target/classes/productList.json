@@ -2,14 +2,9 @@
   "id" : 0,
   "productType" : "Console0",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 0",
   "brand" : "Product brand0",
   "tax" : 500.0,
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
->>>>>>> Stashed changes
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
@@ -18,72 +13,60 @@
   "price" : 500.0,
   "serie" : "Product 1",
   "brand" : "Product brand1",
-  "tax" : 120.5,
+  "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : 2,
   "productType" : "Console2",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 2",
   "brand" : "Product brand2",
   "tax" : 500.0,
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
->>>>>>> Stashed changes
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : 3,
   "productType" : "Console3",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 3",
   "brand" : "Product brand3",
   "tax" : 500.0,
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
->>>>>>> Stashed changes
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : 4,
   "productType" : "Console4",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 4",
   "brand" : "Product brand4",
   "tax" : 500.0,
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
->>>>>>> Stashed changes
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : 5,
   "productType" : "Console5",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 5",
   "brand" : "Product brand5",
   "tax" : 500.0,
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
->>>>>>> Stashed changes
   "diskCapacity" : 512,
   "diskReader" : true
 }, {
   "id" : 6,
   "productType" : "Console6",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 6",
   "brand" : "Product brand6",
+  "tax" : 500.0,
+  "diskCapacity" : 512,
+  "diskReader" : true
+}, {
+  "id" : 7,
+  "productType" : "Console7",
+  "price" : 500.0,
+  "serie" : "Product 7",
+  "brand" : "Product brand7",
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
@@ -96,52 +79,13 @@
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : "CON-7",
-  "productType" : "CONSOLE",
-  "name" : "SWITCH",
-  "price" : 1000.0,
-  "brand" : "NINTENDO",
-  "tax" : 12.2,
-  "diskCapacity" : 32,
-  "diskReader" : false
->>>>>>> Stashed changes
 }, {
   "id" : 9,
   "productType" : "Console9",
   "price" : 500.0,
-<<<<<<< Updated upstream
   "serie" : "Product 9",
   "brand" : "Product brand9",
   "tax" : 500.0,
   "diskCapacity" : 512,
   "diskReader" : true
-}, {
-  "id" : 10,
-  "productType" : "CONSOLE",
-  "price" : 500.0,
-  "serie" : "SERIES X",
-  "brand" : "ANY",
-  "tax" : 15.8,
-  "diskCapacity" : 1000,
-=======
-  "brand" : "Product brand1",
-  "tax" : 120.5,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : "CON-7",
-  "productType" : "CONSOLE",
-  "name" : "SWITCH",
-  "price" : 1000.0,
-  "brand" : "NINTENDO",
-  "tax" : 12.2,
-  "diskCapacity" : 32,
->>>>>>> Stashed changes
-  "diskReader" : false
 } ]
