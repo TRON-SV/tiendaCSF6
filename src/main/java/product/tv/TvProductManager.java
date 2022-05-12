@@ -3,6 +3,9 @@ package product.tv;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import product.console.ConsoleProduct;
+import product.tv.interfaces.ITvProductManager;
+import product.tv.interfaces.ITvProductModifier;
 
 import java.util.ArrayList;
 
@@ -15,41 +18,45 @@ public class TvProductManager implements ITvProductManager, ITvProductModifier {
     public ArrayList<TvProduct> tvProductList = new ArrayList<>();
 
     @Override
-    public void addTvProduct(TvProduct product) {
-        this.tvProductList.add(product);
-        productPrinter.displayMessage("--------------!PRODUCT "+ product.getId() +" ADDED!-----------------");
-    }
+    public Boolean addTvProduct(TvProduct product) { return tvProductList.add(product); }
     @Override
-    public void deleteTvProduct(String productSudoId) {
-        boolean isTheProductFounded = false;
+    public Boolean deleteTvProduct(String productId) {
         for(int i = 0; i< tvProductList.size(); i++){
-            if(tvProductList.get(i).getId().equals(productSudoId)){
-                isTheProductFounded = true;
+            if(Boolean.TRUE.equals(isProductFound(tvProductList.get(i),productId))){
                 this.tvProductList.remove(i);
-                break;
+                return true;
             }
         }
-        if(isTheProductFounded){
-            productPrinter.displayMessage("--------------!PRODUCT DELETED!-----------------");
-        }else{
-            productPrinter.displayMessage("--------------!PRODUCT NOT FOUNDED!-----------------");
-        }
+        return false;
     }
     @Override
-    public void modifyTvProduct(TvProduct product, String productId) {
-        for(int i = 0; i< tvProductList.size(); i++){
-            if(tvProductList.get(i).getId().equals(productId)){
-                //PERFORMING A UPDATE OF THE PRODUCT DATA
-                tvProductList.get(i).setProductType(product.getProductType());
-                tvProductList.get(i).setName(product.getName());
-                tvProductList.get(i).setPrice(product.getPrice());
-                tvProductList.get(i).setBrand(product.getBrand());
-                tvProductList.get(i).setTax(product.getTax());
-                tvProductList.get(i).setTvtype(product.getTvtype());
-                tvProductList.get(i).setSmart(product.getSmart());
-                tvProductList.get(i).setTvsize(product.getTvsize());
-                productPrinter.displayMessage("--------------!PRODUCT UPDATED!-----------------");
+    public Boolean modifyTvProduct(TvProduct product, String productId) {
+        for(TvProduct currentProduct : getTvProductList()){
+            if(Boolean.TRUE.equals(isProductFound(currentProduct,productId))){
+                setProductData(currentProduct, product);
+                return true;
             }
         }
+        return false;
+    }
+    public Boolean isProductFound(TvProduct product, String productId){
+        return product.getId().equals(productId);
+    }
+    public void setProductData(TvProduct productSource, TvProduct productNew){
+        productSource.setId(productNew.getId());
+        productSource.setProductType(productNew.getProductType());
+        productSource.setName(productNew.getName());
+        productSource.setPrice(productNew.getPrice());
+        productSource.setBrand(productNew.getBrand());
+        productSource.setTax(productNew.getTax());
+        productSource.setTvsize(productNew.getTvsize());
+        productSource.setSmart(productNew.getSmart());
+        productSource.setTvtype(productNew.getTvtype());
+    }
+    public String generateId(){
+        if(!getTvProductList().isEmpty()){
+            return "TV-"+ (Integer.parseInt(getTvProductList().get(getTvProductList().size()-1).getId().replaceFirst("TV-","")) + 1);
+        }
+        return "TV-0";
     }
 }

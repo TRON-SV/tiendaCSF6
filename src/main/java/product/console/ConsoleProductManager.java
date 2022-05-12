@@ -57,6 +57,9 @@ public class ConsoleProductManager implements IConsoleProductManager, IConsolePr
         productSource.setDiskReader(productNew.getDiskReader());
     }
     public String generateId(){
-        return "CON-" + getConsoleProductList().size();
+        if(!getConsoleProductList().isEmpty()){
+            return "CON-"+ (Integer.parseInt(getConsoleProductList().get(getConsoleProductList().size()-1).getId().replaceFirst("CON-","")) + 1);
+        }
+        return "CON-0";
     }
 }

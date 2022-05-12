@@ -1,9 +1,14 @@
 package product.tv;
 
 import lombok.NoArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import product.console.ConsoleProductPrinter;
+import product.tv.interfaces.IDisplayTvProductInfo;
 
 @NoArgsConstructor
 public class TvProductPrinter implements IDisplayTvProductInfo {
+    private static final Logger LOGGER = LogManager.getLogger(TvProductPrinter.class);
     @Override
     public void displayProductInfo(TvProductManager productArchiver) {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -24,6 +29,6 @@ public class TvProductPrinter implements IDisplayTvProductInfo {
     }
     @Override
     public void displayMessage(String msg) {
-        System.out.println(msg);
+        LOGGER.info(msg);
     }
 }

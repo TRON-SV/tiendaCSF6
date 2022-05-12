@@ -1,7 +1,7 @@
 package product.computer.interfaces;
 
-import product.computer.ComputerProductArchiver;
+import product.computer.ComputerProductManager;
 
 public interface IFillSeveralComputerProduct {
-    void fillProducts(Integer quantity, ComputerProductArchiver productArchiver);
+    void fillProducts(Integer quantity, ComputerProductManager productArchiver);
 }

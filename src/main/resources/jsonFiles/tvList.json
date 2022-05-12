@@ -1,0 +1,51 @@
+[ {
+  "id" : "TV-0",
+  "productType" : "TV",
+  "name" : "Product 0",
+  "price" : 500.0,
+  "brand" : "Product brand0",
+  "tax" : 120.5,
+  "tvsize" : "19´´0",
+  "smart" : true,
+  "tvtype" : "LED0"
+}, {
+  "id" : "TV-1",
+  "productType" : "TV",
+  "name" : "Product 1",
+  "price" : 500.0,
+  "brand" : "Product brand1",
+  "tax" : 120.5,
+  "tvsize" : "19´´1",
+  "smart" : true,
+  "tvtype" : "LED1"
+}, {
+  "id" : "TV-2",
+  "productType" : "TV",
+  "name" : "Product 2",
+  "price" : 500.0,
+  "brand" : "Product brand2",
+  "tax" : 120.5,
+  "tvsize" : "19´´2",
+  "smart" : true,
+  "tvtype" : "LED2"
+}, {
+  "id" : "TV-3",
+  "productType" : "TV",
+  "name" : "Product 3",
+  "price" : 500.0,
+  "brand" : "Product brand3",
+  "tax" : 120.5,
+  "tvsize" : "19´´3",
+  "smart" : true,
+  "tvtype" : "LED3"
+}, {
+  "id" : "TV-4",
+  "productType" : "TV",
+  "name" : "Product 4",
+  "price" : 500.0,
+  "brand" : "Product brand4",
+  "tax" : 120.5,
+  "tvsize" : "19´´4",
+  "smart" : true,
+  "tvtype" : "LED4"
+} ]

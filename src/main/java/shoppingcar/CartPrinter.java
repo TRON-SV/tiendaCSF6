@@ -28,7 +28,6 @@ public class CartPrinter implements ICartPrinter{
                             +"      Size: "+cart.getComputerProductList().get(cart.getComputerCounter()).getSize()
                             +"      RAM: "+cart.getComputerProductList().get(cart.getComputerCounter()).getMemoryRam()
                             +"      Hard-Disk: "+cart.getComputerProductList().get(cart.getComputerCounter()).getHardDisk()
-                            +"      Description: "+cart.getComputerProductList().get(cart.getComputerCounter()).getDescription()
                     );
                     cart.setComputerCounter(cart.getComputerCounter()+1);
                     break;

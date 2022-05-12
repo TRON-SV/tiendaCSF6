@@ -1,0 +1,61 @@
+[ {
+  "id" : "PC-1",
+  "productType" : "COMPUTER",
+  "name" : "Product 1",
+  "price" : 500.0,
+  "brand" : "Product brand1",
+  "tax" : 120.5,
+  "operativeSystem" : "Windows 10",
+  "processor" : "AMD Ryzen 3",
+  "size" : 1.0,
+  "memoryRam" : 8,
+  "hardDisk" : 1000
+}, {
+  "id" : "PC-2",
+  "productType" : "COMPUTER",
+  "name" : "Product 2",
+  "price" : 500.0,
+  "brand" : "Product brand2",
+  "tax" : 120.5,
+  "operativeSystem" : "Windows 10",
+  "processor" : "AMD Ryzen 3",
+  "size" : 2.0,
+  "memoryRam" : 8,
+  "hardDisk" : 1000
+}, {
+  "id" : "PC-3",
+  "productType" : "COMPUTER",
+  "name" : "MACBOCK LASTED PC",
+  "price" : 4000.0,
+  "brand" : "APPLE",
+  "tax" : 480.99,
+  "operativeSystem" : "WINDOWS 10",
+  "processor" : "INTEL CORE I7",
+  "size" : 40.0,
+  "memoryRam" : 32,
+  "hardDisk" : 1000
+}, {
+  "id" : "PC-4",
+  "productType" : "COMPUTER",
+  "name" : "Product 4",
+  "price" : 500.0,
+  "brand" : "Product brand4",
+  "tax" : 120.5,
+  "operativeSystem" : "Windows 10",
+  "processor" : "AMD Ryzen 3",
+  "size" : 4.0,
+  "memoryRam" : 8,
+  "hardDisk" : 1000
+}, {
+  "id" : "PC-5",
+  "productType" : "COMPUTER",
+  "name" : "RAZER MAMBA DESKTOP PC",
+  "price" : 2500.0,
+  "brand" : "RAZER",
+  "tax" : 290.55,
+  "operativeSystem" : "WINDOWS 10",
+  "processor" : "RAZEN NEW PROCESSOR",
+  "size" : 50.0,
+  "memoryRam" : 32,
+  "hardDisk" : 2000
+} ]

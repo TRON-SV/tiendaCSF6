@@ -32,7 +32,7 @@ public class MenuCustomer {
         //---------------------------VARIABLES USED FOR COMPUTERS------------------------------
         ComputerProduct computerProduct = new ComputerProduct();
         ComputerProductFiller computerProductFiller = new ComputerProductFiller();
-        ComputerProductArchiver computerProductArchiver = new ComputerProductArchiver();
+        ComputerProductManager computerProductArchiver = new ComputerProductManager();
         ComputerProductPrinter computerProductPrinter = new ComputerProductPrinter();
         //FILLING A FIXED SET OF PRODUCTS
         computerProductFiller.fillProducts(10, computerProductArchiver);
