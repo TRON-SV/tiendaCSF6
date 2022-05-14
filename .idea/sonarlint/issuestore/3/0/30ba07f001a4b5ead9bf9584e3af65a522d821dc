@@ -1,5 +1,6 @@
 
 n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ï“Õ
+<<<<<<< Updated upstream
 S	java:S106"9Replace this use of System.out or System.err by a logger.(¬€—Æ˙ˇˇˇˇ
 S	java:S106"9Replace this use of System.out or System.err by a logger.(¶≠ÏÜ˛ˇˇˇˇ
 O
@@ -24,3 +25,33 @@ M	java:S1067"9Replace this use of System.out or System.err by a logger.(ù ƒ
 S	java:S106;"9Replace this use of System.out or System.err by a logger.(›æ˛⁄˘ˇˇˇˇ
 P
 java:S2209D"5Change this instance-reference to a static reference.(†À¯ó˛ˇˇˇˇ
+=======
+I
+java:S3416",Update this logger to use "MenuAdmin.class".(§åŒœ8ò»Õ®ã0
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¬€—Æ˙ˇˇˇˇ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¶≠ÏÜ˛ˇˇˇˇ
+O
+java:S1854 "9Remove this useless assignment to local variable "admin".(¢‰¡Â
+@
+java:S1481 "*Remove this unused "admin" local variable.(¢‰¡Â
+V	java:S125$"<This block of commented-out lines of code should be removed.(Áè⁄î¸ˇˇˇˇ
+<	java:S131)""Add a default case to this switch.(≠÷πß˙ˇˇˇˇ
+H
+java:S2440+"+Remove this instantiation of "MenuConsole".(Îπ€ú8«Üö›ä0
+W
+java:S2209,"5Change this instance-reference to a static reference.(ËººÄˇˇˇˇˇ8»Üö›ä0
+H
+java:S2440/"&Remove this instantiation of "MenuTv".(˝„˛˘˚ˇˇˇˇ8…Üö›ä0
+R
+java:S22090"5Change this instance-reference to a static reference.(∫Õòì8 Üö›ä0
+N
+java:S24403",Remove this instantiation of "MenuComputer".(æÆñÓ˝ˇˇˇˇ8ÀÜö›ä0
+R
+java:S22094"5Change this instance-reference to a static reference.(Ùı⁄À8ÃÜö›ä0
+^
+java:S3457;"AFormat specifiers should be used instead of string concatenation.(“¶Ùä8ó°–®ã0
+^
+java:S3457@"AFormat specifiers should be used instead of string concatenation.(´ΩÉÒ8ô°–®ã0
+P
+java:S2209I"5Change this instance-reference to a static reference.(†À¯ó˛ˇˇˇˇ
+>>>>>>> Stashed changes

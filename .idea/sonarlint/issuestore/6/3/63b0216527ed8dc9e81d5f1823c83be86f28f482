@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 p
 java:S1192p"UDefine a constant instead of duplicating this literal "That's not a String!" 5 times.(°šÔ‰úÿÿÿÿ
 `
@@ -40,3 +41,16 @@ T	java:S106¶"9Replace this use of System.out or System.err by a logger.(º®´şø
 T	java:S106¸"9Replace this use of System.out or System.err by a logger.(°šÔ‰úÿÿÿÿ
 O
 java:S1128"4Remove this unused import 'java.util.regex.Pattern'.(Ã•…Äúÿÿÿÿ
+=======
+E
+java:S5411B"*Use the primitive boolean expression here.(÷‘ø‹ıÿÿÿÿ
+E
+java:S5411M"*Use the primitive boolean expression here.(ê‰¦œøÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÂÛÑ®úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(²Û×âüÿÿÿÿ
+<	java:S131.""Add a default case to this switch.(­Ö¹§úÿÿÿÿ
+N	java:S106A"9Replace this use of System.out or System.err by a logger.(œÏŒÂ
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(œÏŒÂ
+M	java:S106_"9Replace this use of System.out or System.err by a logger.(ÊÄ
+S	java:S106c"9Replace this use of System.out or System.err by a logger.(İ¾şÚùÿÿÿÿ
+>>>>>>> Stashed changes

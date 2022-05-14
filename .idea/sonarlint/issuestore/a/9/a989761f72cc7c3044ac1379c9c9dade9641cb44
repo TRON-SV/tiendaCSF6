@@ -1,0 +1,11 @@
+
+†
+java:S1319"kThe type of "productList" should be an interface such as "List" rather than the implementation "ArrayList".(ÜëãÔüÿÿÿÿ
+‹
+java:S1319'"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(óğ˜üÿÿÿÿ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(®ßÏ
+W
+java:S3457$"AFormat specifiers should be used instead of string concatenation.(Š§ãÇ
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(ˆˆ›÷şÿÿÿÿ
+W
+java:S3457."AFormat specifiers should be used instead of string concatenation.(Š§ãÇ
