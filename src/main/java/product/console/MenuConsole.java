@@ -3,7 +3,6 @@ package product.console;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import product.CaptureProductData;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -23,19 +22,19 @@ public class MenuConsole {
                 "2- Add Product",
                 "3- Delete a Product",
                 "4- Modify Product Data",
-                "5- Generate JSON File",
-                "6- Load From Json File",
+                "5- Export to JSON File",
+                "6- Import From Json File",
                 "0- Exit",
                 "/*------------------------------------------------------------------*/",
         };
         //DECLARING PRODUCT RELATED CLASSES FOR FURTHER USE
-        ConsoleProductFiller consoleProductFiller = new ConsoleProductFiller();
-        ConsoleProductManager consoleProductManager = new ConsoleProductManager();
-        ConsoleProductPrinter consoleProductPrinter = new ConsoleProductPrinter();
+        ConsoleProductFiller consoleFiller = new ConsoleProductFiller();
+        ConsoleProductManager consoleManager = new ConsoleProductManager();
+        ConsoleProductPrinter consolePrinter = new ConsoleProductPrinter();
         //FILLING A FIXED SET OF PRODUCTS
-        consoleProductFiller.fillProducts(10, consoleProductManager);
-        CaptureProductData captureProductData = new CaptureProductData(consoleProductManager.getConsoleProduct());
-        JsonConverter jsonConverter;
+        consoleFiller.fillProducts(5, consoleManager);
+        CaptureProductData captureProductData = new CaptureProductData(consoleManager.getConsoleProduct());
+        ConsoleJsonConverter consoleJsonConverter;
 
         Scanner scanner = new Scanner(System.in);
         int option = 1;
@@ -45,43 +44,44 @@ public class MenuConsole {
                 option = scanner.nextInt();
                 switch (option){
                     case 1://DISPLAY PRODUCTS
-                        consoleProductPrinter.displayProductInfo(consoleProductManager);
+                        consolePrinter.displayProductInfo(consoleManager);
                         break;
                     case 2://ADD A PRODUCT
                         /*------------------CAPTURING THE DATA TO STORE--------------------*/
                         captureProductData.captureProductData();
                         captureProductData.captureConsoleData();
-                        captureProductData.getProduct().setId(consoleProductManager.generateId());
-                        consoleProductManager.addConsoleProduct(captureProductData.getCProduct());
-                        //At this point, consoleProductManager.ConsoleProduct has its object<ConsoleProduct> filled
+                        captureProductData.getProduct().setId(consoleManager.generateId());
+                        consoleManager.addConsoleProduct(captureProductData.getCProduct());
+                        //At this point, consoleManager.ConsoleProduct has its object<ConsoleProduct> filled
                         captureProductData.getCProduct().playVideoGame();
                         captureProductData.setProduct(new ConsoleProduct());
                         break;
                     case 3://DELETE A PRODUCT
-                        LOGGER.info(consoleProductPrinter);
-                        consoleProductPrinter.displayProductInfo(consoleProductManager);
+                        LOGGER.info(consolePrinter);
+                        consolePrinter.displayProductInfo(consoleManager);
                         System.out.println("Choose a product from the list (0-9): ");
-                        if(consoleProductManager.deleteConsoleProduct(captureProductData.captureProductId("CON-")))
+                        if(consoleManager.deleteConsoleProduct(captureProductData.captureProductId("CON-")))
                             LOGGER.info("--------------!PRODUCT DELETED!-----------------");
                         else LOGGER.error("--------------!COULDN'T FIND THE PRODUCT!--------------");
                         break;
                     case 4://UPDATE A PRODUCT
-                        consoleProductPrinter.displayProductInfo(consoleProductManager);
+                        consolePrinter.displayProductInfo(consoleManager);
                         System.out.println("Choose a product from the list (0-9): ");
                         captureProductData.captureProductId("CON-");
                         captureProductData.captureProductData();
                         captureProductData.captureConsoleData();
-                        if(consoleProductManager.modifyProduct(captureProductData.getCProduct(),captureProductData.getProduct().getId()))
+                        if(consoleManager.modifyProduct(captureProductData.getCProduct(),captureProductData.getProduct().getId()))
                             LOGGER.info("--------------!PRODUCT UPDATED!-----------------");
                         else LOGGER.error("--------------!COULDN'T UPDATE THE PRODUCT!--------------");
+                        captureProductData.setProduct(new ConsoleProduct());
                         break;
                     case 5://EXPORT TO JSON FILE
-                        jsonConverter = new JsonConverter(consoleProductManager.getConsoleProductList());
-                        jsonConverter.exportToJson();
+                        consoleJsonConverter = new ConsoleJsonConverter(consoleManager.getConsoleProductList());
+                        consoleJsonConverter.exportToJson();
                         break;
                     case 6://IMPORT FROM JSON FILE
-                        jsonConverter = new JsonConverter();
-                        consoleProductManager.setConsoleProductList(jsonConverter.importFromJson());
+                        consoleJsonConverter = new ConsoleJsonConverter();
+                        consoleManager.setConsoleProductList(consoleJsonConverter.importFromJson());
                         break;
                     case 0:
                         break;
@@ -99,7 +99,6 @@ public class MenuConsole {
             }
         }
     }
-
     public static void main(String[] args) {
         crudConsole();
     }

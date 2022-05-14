@@ -1,9 +1,11 @@
 package product.console;
 
+import lombok.NoArgsConstructor;
 import product.EProductType;
 import product.console.interfaces.IFillSeveralConsoleProduct;
 import product.console.interfaces.IFillSingleConsoleProduct;
 
+@NoArgsConstructor
 public class ConsoleProductFiller implements IFillSeveralConsoleProduct {
     @Override
     public void fillProducts(Integer quantity, ConsoleProductManager productManager) {

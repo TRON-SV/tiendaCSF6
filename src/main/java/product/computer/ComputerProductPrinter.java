@@ -1,14 +1,19 @@
 package product.computer;
 
 import lombok.NoArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import product.computer.interfaces.IDisplayComputerProductInfo;
+import product.console.ConsoleProductPrinter;
 
 @NoArgsConstructor
 public class ComputerProductPrinter implements IDisplayComputerProductInfo {
-    public void displayProductInfo(ComputerProductArchiver productArcheiver) {
+    private static final Logger LOGGER = LogManager.getLogger(ComputerProductPrinter.class);
+    @Override
+    public void displayProductInfo(ComputerProductManager productManager) {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        for(int i=0; i<productArcheiver.computerProductList.size(); i++) {
-            ComputerProduct computerProduct = productArcheiver.computerProductList.get(i);
+        for(int i=0; i<productManager.computerProductList.size(); i++) {
+            ComputerProduct computerProduct = productManager.computerProductList.get(i);
             System.out.println("#: " + computerProduct.getId()
                     +"      Type: " + computerProduct.getProductType()
                     +"      Name: " + computerProduct.getName()
@@ -20,7 +25,6 @@ public class ComputerProductPrinter implements IDisplayComputerProductInfo {
                     +"      RAM: " + computerProduct.getMemoryRam() + "GB"
                     +"      Operative System: " + computerProduct.getOperativeSystem()
                     +"      Size: " + computerProduct.getSize() + " cm"
-                    +"      Description: " + computerProduct.getDescription()
 
             );
             System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -29,6 +33,6 @@ public class ComputerProductPrinter implements IDisplayComputerProductInfo {
 
     @Override
     public void displayMessage(String msg) {
-        System.out.println(msg);
+        LOGGER.info(msg);
     }
 }

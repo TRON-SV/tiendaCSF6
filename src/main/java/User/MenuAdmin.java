@@ -1,5 +1,7 @@
 package User;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import product.computer.MenuComputer;
 import product.console.MenuConsole;
 import product.tv.MenuTv;
@@ -10,6 +12,7 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 
 public class MenuAdmin {
+    private static final Logger LOGGER = LogManager.getLogger(MenuConsole.class);
     public static void printMenu(String[] options){
         for (String option : options){
             System.out.println(option);
@@ -52,11 +55,13 @@ public class MenuAdmin {
                         break;
                 }
             }catch (InputMismatchException ex){
-                System.out.println("Please enter an integer value between 1 and " + options.length);
+                LOGGER.error(String.format("Please enter an integer value between 1 and %d", options.length));
+                LOGGER.error("RunTime Exception: " + ex, ex);
                 scan.next();
             }
             catch (Exception ex){
-                System.out.println("An unexpected error happened. Please try again");
+                LOGGER.fatal("An unexpected error happened. Please try again");
+                LOGGER.error("An unexpected error happened. Please try again" + ex, ex);
                 scan.next();
             }
         }

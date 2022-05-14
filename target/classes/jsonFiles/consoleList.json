@@ -46,55 +46,10 @@
 }, {
   "id" : "CON-5",
   "productType" : "CONSOLE",
-  "name" : "Product 5",
-  "price" : 500.0,
-  "brand" : "Product brand5",
-  "tax" : 120.5,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : "CON-6",
-  "productType" : "CONSOLE",
-  "name" : "Product 6",
-  "price" : 500.0,
-  "brand" : "Product brand6",
-  "tax" : 120.5,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : "CON-7",
-  "productType" : "CONSOLE",
-  "name" : "Product 7",
-  "price" : 500.0,
-  "brand" : "Product brand7",
-  "tax" : 120.5,
-  "diskCapacity" : 512,
-  "diskReader" : true
-}, {
-  "id" : "CON-9",
-  "productType" : "CONSOLE",
-  "name" : "PLAY STATION NEW CONSOLE",
-  "price" : 1200.0,
-  "brand" : "SONY",
-  "tax" : 52.21,
-  "diskCapacity" : 1000,
-  "diskReader" : false
-}, {
-  "id" : "CON-10",
-  "productType" : "CONSOLE",
-  "name" : "XBOX SERIES X",
+  "name" : "SONY NEW CONSOLE",
   "price" : 1500.0,
-  "brand" : "MICROSOFT",
-  "tax" : 34.23,
-  "diskCapacity" : 2000,
+  "brand" : "SONY",
+  "tax" : 140.23,
+  "diskCapacity" : 1000,
   "diskReader" : true
-}, {
-  "id" : "CON-11",
-  "productType" : "CONSOLE",
-  "name" : "NINTENDO SWITCH",
-  "price" : 350.0,
-  "brand" : "NINTENDO",
-  "tax" : 100.0,
-  "diskCapacity" : 32,
-  "diskReader" : false
 } ]

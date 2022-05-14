@@ -1,13 +1,15 @@
 package product.computer;
 
-import product.EProductType;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import product.CaptureProductData;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class MenuComputer {
+    private static final Logger LOGGER = LogManager.getLogger(MenuComputer.class);
     public static void printMenu(String[] options) {
+        LOGGER.info(MenuComputer.class);
         for (String option: options) {
             System.out.println(option);
         }
@@ -21,61 +23,69 @@ public class MenuComputer {
                 "2- Add Product",
                 "3- Delete a Product",
                 "4- Modify Product Data",
+                "5- Export to JSON File",
+                "6- Import From Json File",
                 "0- Exit",
                 "/*---------------------------------------------------*/",
         };
+        //DECLARING PRODUCT RELATED CLASSES FOR FURTHER USE
         ComputerProduct computerProduct = new ComputerProduct();
-        ComputerProductFiller computerProductFiller = new ComputerProductFiller();
-        ComputerProductArchiver computerProductArchiver = new ComputerProductArchiver();
-        ComputerProductPrinter computerProductPrinter = new ComputerProductPrinter();
+        ComputerProductFiller computerFiller = new ComputerProductFiller();
+        ComputerProductManager computerManager = new ComputerProductManager();
+        ComputerProductPrinter computerPrinter = new ComputerProductPrinter();
+        computerFiller.fillProducts(5, computerManager);
+        CaptureProductData captureProductData = new CaptureProductData(computerManager.getComputerProduct());
+        ComputerJsonConverter computerJsonConverter;
 
-        computerProductFiller.fillProducts(20, computerProductArchiver);
-        String productId, selectedOption;
-
-        Scanner sc = new Scanner(System.in);
-
+        Scanner scanner = new Scanner(System.in);
         int option = 1;
         while (option != 0) {
             printMenu(options);
             try {
-                option = sc.nextInt();
+                option = scanner.nextInt();
                 switch (option) {
                     case 1:
                         // ---- Display Products
-                        computerProductPrinter.displayProductInfo(computerProductArchiver);
+                        computerPrinter.displayProductInfo(computerManager);
                         break;
                     case 2:
                         // ---- Add product
-                        computerProduct = captureComputerProductData();
-                        computerProductFiller.fillProduct(computerProduct, computerProductArchiver);
-                        computerProductArchiver.addComputerProduct(computerProduct);
+                        captureProductData.captureProductData();
+                        captureProductData.captureComputerData();
+                        captureProductData.getProduct().setId(computerManager.generateId());
+                        computerManager.addComputerProduct(captureProductData.getComputerProduct());
                         computerProduct.turnOnDevice();
                         computerProduct.turnOffDevice();
+                        captureProductData.setProduct(new ComputerProduct());
                         break;
                     case 3:
                         // ---- Delete product
-                        computerProductPrinter.displayProductInfo(computerProductArchiver);
-                        System.out.println("Choose a product from the list (#): ");
-                        while (!sc.hasNext("[0-9]*")) {
-                            System.out.println("That's not a valid Id!");
-                            sc.next();
-                        }
-                        productId = "PC-"+sc.nextLine();
-                        sc = new Scanner(System.in);
-                        computerProductArchiver.deleteComputerProduct(productId);
+                        LOGGER.info(computerPrinter);
+                        computerPrinter.displayProductInfo(computerManager);
+                        System.out.println("Choose a product from the list (0-9): ");
+                        if(computerManager.deleteComputerProduct(captureProductData.captureProductId("PC-")))
+                            LOGGER.info("--------------!PRODUCT DELETED!-----------------");
+                        else LOGGER.error("--------------!COULDN'T FIND THE PRODUCT!--------------");
                         break;
                     case 4:
                         // ---- Modify product
-                        computerProductPrinter.displayProductInfo(computerProductArchiver);
+                        computerPrinter.displayProductInfo(computerManager);
                         System.out.println("Choose a product from the list (0-9): ");
-                        while (!sc.hasNext("[0-9]*")) {
-                            System.out.println("That's not a valid Id!");
-                            sc.next();
-                        }
-                        productId = "PC-"+sc.nextLine();
-                        sc = new Scanner(System.in);
-                        computerProduct = captureComputerProductData();
-                        computerProductArchiver.modifyComputerProduct(computerProduct, productId);
+                        captureProductData.captureProductId("PC-");
+                        captureProductData.captureProductData();
+                        captureProductData.captureComputerData();
+                        if(computerManager.modifyComputerProduct(captureProductData.getComputerProduct(),captureProductData.getProduct().getId()))
+                            LOGGER.info("--------------!PRODUCT UPDATED!-----------------");
+                        else LOGGER.error("--------------!COULDN'T UPDATE THE PRODUCT!--------------");
+                        captureProductData.setProduct(new ComputerProduct());
+                        break;
+                    case 5://EXPORT TO JSON FILE
+                        computerJsonConverter = new ComputerJsonConverter(computerManager.getComputerProductList());
+                        computerJsonConverter.exportToJson();
+                        break;
+                    case 6://IMPORT FROM JSON FILE
+                        computerJsonConverter = new ComputerJsonConverter();
+                        computerManager.setComputerProductList(computerJsonConverter.importFromJson());
                         break;
                     case 0:
                         break;
@@ -83,111 +93,14 @@ public class MenuComputer {
             }
             catch (InputMismatchException ex) {
                 System.out.println("Please enter an integer value between 1 and " + options.length);
-                sc.next();
+                scanner.next();
             }
             catch (Exception ex){
                 System.out.println("An unexpected error happened. Please try again");
-                sc.next();
+                scanner.next();
             }
         }
     }
-
-    public static ComputerProduct captureComputerProductData() {
-        ComputerProduct product = new ComputerProduct();
-        product.setProductType(EProductType.COMPUTER);
-
-        Scanner sc = new Scanner(System.in);
-        /*------------------ASKING DATA--------------------*/
-        System.out.println("Enter the Price: ");
-        while (!sc.hasNextDouble()) {
-            System.out.println("That's not a valid value (Double)!");
-            sc.next();
-        }
-        product.setPrice(sc.nextDouble());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Name(String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setName(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the TAX Price: ");
-        while (!sc.hasNextDouble()) {
-            System.out.println("That's not a valid value (Double)!");
-            sc.next();
-        }
-        product.setTax(sc.nextDouble());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Brand(String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setBrand(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter Operative System (String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setOperativeSystem(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Processor (String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setProcessor(sc.nextLine());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Size in CM (Deciamal / Float): ");
-        while (!sc.hasNextDouble()) {
-            System.out.println("That's not a valid value (Float / Decimal)!");
-            sc.next();
-        }
-        product.setSize(sc.nextFloat());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter the Memory-RAM(Integer): ");
-        while (!sc.hasNextInt()) {
-            System.out.println("That's not a valid value (Integer)!");
-            sc.next();
-        }
-        product.setMemoryRam(sc.nextInt());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter Hard-Drive capacity(Integer): ");
-        while (!sc.hasNextInt()) {
-            System.out.println("That's not a valid value (Integer)!");
-            sc.next();
-        }
-        product.setHardDisk(sc.nextInt());
-        sc = new Scanner(System.in);
-        /*------------------ASKING NEXT DATA--------------------*/
-        sc.reset();
-        System.out.println("Enter a description (String): ");
-        while (!sc.hasNext("[A-Za-z]*")) {
-            System.out.println("That's not a String!");
-            sc.next();
-        }
-        product.setDescription(sc.nextLine());
-        return product;
-    }
-
     public static void main(String[] args) {
         MenuComputer.crudComputer();
     }

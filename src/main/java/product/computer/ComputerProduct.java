@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import product.AProduct;
+import product.EProductType;
 import product.IDeviceSwitcher;
 
 @AllArgsConstructor
@@ -16,11 +17,13 @@ public class ComputerProduct extends AProduct implements IDeviceSwitcher {
     private Float size;
     private Integer memoryRam;
     private Integer hardDisk;
-    private String description;
 
-    @Builder
     public ComputerProduct() {
         super();
+    }
+    @Builder
+    public ComputerProduct(String id, EProductType productType, String name, Double price, String brand, Double tax){
+        super(id,productType,name,price,brand,tax);
     }
 
     @Override

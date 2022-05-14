@@ -2,30 +2,25 @@ package product.tv;
 
 import lombok.NoArgsConstructor;
 import product.EProductType;
+import product.console.ConsoleProduct;
+import product.tv.interfaces.IFillSeveralTvProduct;
+import product.tv.interfaces.IFillSingleTvProduct;
 
 @NoArgsConstructor
-public class TvProductFiller implements IFillSingleTvProduct, IFillSeveralTvProduct {
+public class TvProductFiller implements IFillSeveralTvProduct {
     @Override
-    public void fillProduct(TvProduct product, TvProductManager productArchiver) {
-        productArchiver.tvProduct = product;
-        product.setId("TV-"+productArchiver.tvProductList.size());
-    }
-    @Override
-    public void fillProducts(Integer quantity, TvProductManager productArchiever) {
+    public void fillProducts(Integer quantity, TvProductManager productManager) {
         for(int i=0; i<quantity; i++) {
-            TvProduct tvProduct = new TvProduct();
-            tvProduct.setId("TV-"+productArchiever.tvProductList.size());
-            tvProduct.setProductType(EProductType.TV);
-            tvProduct.setName("Product " + i);
-            tvProduct.setPrice(500.99);
-            tvProduct.setBrand("Product brand" +i);
-            tvProduct.setTax(120.50);
+            TvProduct tvProduct = createNewProduct(productManager.getTvProductList().size());
             tvProduct.setTvsize("19´´"+i);
             tvProduct.setSmart(true);
             tvProduct.setTvtype("LED"+i);
-            productArchiever.addTvProduct(tvProduct);
+            productManager.addTvProduct(tvProduct);
         }
     }
-
-
+    public TvProduct createNewProduct(Integer listSize){
+        return new TvProduct(
+                "TV-"+listSize, EProductType.TV, "Product "+listSize, 500.00, "Product brand"+listSize, 120.5
+        );
+    }
 }

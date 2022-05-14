@@ -1,0 +1,59 @@
+2022-05-11 20:22:48,951 FATAL p.t.MenuTv [main] An unexpected error happened. Please try again
+2022-05-11 20:22:48,953 ERROR p.t.MenuTv [main] An unexpected error happened. Please try againjava.lang.ClassCastException: class product.tv.TvProduct cannot be cast to class product.console.ConsoleProduct (product.tv.TvProduct and product.console.ConsoleProduct are in unnamed module of loader 'app')
+java.lang.ClassCastException: class product.tv.TvProduct cannot be cast to class product.console.ConsoleProduct (product.tv.TvProduct and product.console.ConsoleProduct are in unnamed module of loader 'app')
+	at product.CaptureProductData.captureConsoleData(CaptureProductData.java:92) ~[classes/:?]
+	at product.tv.MenuTv.crudTv(MenuTv.java:54) ~[classes/:?]
+	at product.tv.MenuTv.main(MenuTv.java:96) ~[classes/:?]
+2022-05-11 20:27:13,661 INFO p.t.MenuTv [main] product.tv.TvProductPrinter@25fb8912
+2022-05-11 20:27:17,313 INFO p.t.MenuTv [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 20:27:24,334 INFO p.t.MenuTv [main] product.tv.TvProductPrinter@25fb8912
+2022-05-11 20:27:30,930 INFO p.t.MenuTv [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 20:27:57,505 FATAL p.t.MenuTv [main] An unexpected error happened. Please try again
+2022-05-11 20:27:57,505 ERROR p.t.MenuTv [main] An unexpected error happened. Please try againjava.lang.ClassCastException: class product.console.ConsoleProduct cannot be cast to class product.tv.TvProduct (product.console.ConsoleProduct and product.tv.TvProduct are in unnamed module of loader 'app')
+java.lang.ClassCastException: class product.console.ConsoleProduct cannot be cast to class product.tv.TvProduct (product.console.ConsoleProduct and product.tv.TvProduct are in unnamed module of loader 'app')
+	at product.CaptureProductData.captureTvData(CaptureProductData.java:115) ~[classes/:?]
+	at product.tv.MenuTv.crudTv(MenuTv.java:73) ~[classes/:?]
+	at product.tv.MenuTv.main(MenuTv.java:96) ~[classes/:?]
+2022-05-11 20:30:28,435 INFO p.t.MenuTv [main] --------------!PRODUCT UPDATED!-----------------
+2022-05-11 23:06:52,212 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:07:00,988 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:07:26,587 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:08:02,531 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:08:10,901 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:09:04,856 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:09:07,840 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:10:50,313 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:11:01,863 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:15:00,656 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:15:03,100 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:16:21,941 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:16:25,223 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:18:03,584 INFO p.c.MenuComputer [main] --------------!PRODUCT UPDATED!-----------------
+2022-05-11 23:18:03,584 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:18:06,860 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:18:14,732 INFO p.c.MenuComputer [main] product.computer.ComputerProductPrinter@342c38f8
+2022-05-11 23:18:18,337 INFO p.c.MenuComputer [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 23:18:18,337 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:18:21,135 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:18:42,778 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:19:22,633 INFO p.c.MenuComputer [main] product.computer.ComputerProductPrinter@342c38f8
+2022-05-11 23:19:24,533 INFO p.c.MenuComputer [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 23:19:24,534 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:19:25,627 INFO p.c.MenuComputer [main] product.computer.ComputerProductPrinter@342c38f8
+2022-05-11 23:19:27,411 ERROR p.c.MenuComputer [main] --------------!COULDN'T FIND THE PRODUCT!--------------
+2022-05-11 23:19:27,412 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:19:30,530 INFO p.c.MenuComputer [main] product.computer.ComputerProductPrinter@342c38f8
+2022-05-11 23:19:31,941 INFO p.c.MenuComputer [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 23:19:31,941 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:19:32,918 INFO p.c.MenuComputer [main] product.computer.ComputerProductPrinter@342c38f8
+2022-05-11 23:19:38,348 INFO p.c.MenuComputer [main] --------------!PRODUCT DELETED!-----------------
+2022-05-11 23:19:38,348 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:19:39,951 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:20:57,846 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:21:00,539 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:21:07,096 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:21:14,174 INFO p.c.MenuComputer [main] class product.computer.MenuComputer
+2022-05-11 23:22:34,100 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 23:23:14,970 INFO p.c.ConsoleProduct [main] Playing a video game...
+2022-05-11 23:23:14,971 INFO p.c.MenuConsole [main] class product.console.MenuConsole
+2022-05-11 23:23:23,068 INFO p.c.MenuConsole [main] class product.console.MenuConsole
