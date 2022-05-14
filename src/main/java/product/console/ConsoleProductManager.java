@@ -31,7 +31,7 @@ public class ConsoleProductManager implements IConsoleProductManager, IConsolePr
                 return true;
             }
         }
-        System.out.println("HELLO THIS IS A CHANGE FROM jerson_branch");
+        LOSystem.out.println("HELLO THIS IS A CHANGE FROM jerson_branch");
         return false;
     }
     @Override
