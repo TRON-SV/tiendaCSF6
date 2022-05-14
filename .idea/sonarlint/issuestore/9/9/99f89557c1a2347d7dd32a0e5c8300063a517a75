@@ -1,0 +1,20 @@
+
+E
+java:S5411>"*Use the primitive boolean expression here.(Ìõ’ıúÿÿÿÿ
+@
+java:S5411H"*Use the primitive boolean expression here.(·–Ÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÂÛÑ®úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¦­ì†şÿÿÿÿ
+S
+java:S1854"=Remove this useless assignment to local variable "tvProduct".(ßÊ¡ï
+D
+java:S1481".Remove this unused "tvProduct" local variable.(ßÊ¡ï
+D
+java:S1481#".Remove this unused "productId" local variable.(¨¥•Ô
+<	java:S131-""Add a default case to this switch.(­Ö¹§úÿÿÿÿ
+N	java:S106="9Replace this use of System.out or System.err by a logger.(œÏŒÂ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(œÏŒÂ
+W
+java:S3457["AFormat specifiers should be used instead of string concatenation.(Ò¦ôŠ
+W
+java:S3457`"AFormat specifiers should be used instead of string concatenation.(«½ƒñ

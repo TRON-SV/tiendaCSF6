@@ -1,1 +1,3 @@
 *.class
+# SonarLint plugin
+.idea/sonarlint/

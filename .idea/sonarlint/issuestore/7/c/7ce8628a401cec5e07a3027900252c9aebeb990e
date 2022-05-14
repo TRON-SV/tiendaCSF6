@@ -1,0 +1,11 @@
+
+
+<<<<<<< Updated upstream
+java:S1319"mThe type of "tvProductList" should be an interface such as "List" rather than the implementation "ArrayList".(Αρώ³όÿÿÿÿ
+t
+java:S1104"YMake tvProductList a static final constant or non-public and provide accessors if needed.(Αρώ³όÿÿÿÿ
+=======
+java:S1319"mThe type of "tvProductList" should be an interface such as "List" rather than the implementation "ArrayList".(Αρώ³όÿÿÿÿ
+t
+java:S1104"YMake tvProductList a static final constant or non-public and provide accessors if needed.(Αρώ³όÿÿÿÿ
+>>>>>>> Stashed changes
